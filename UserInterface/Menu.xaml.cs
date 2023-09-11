@@ -38,7 +38,7 @@ namespace SystemTrayMenu.UserInterface
 
         private readonly string folderPath;
 
-        private Tuple<ListViewItem?, int> detectLeftMouseButtonClicked = new(null, 0);
+        private int countLeftMouseButtonClicked;
         private bool isShellContextMenuOpen;
         private bool directionToRight;
         private Point lastLocation;
@@ -1099,13 +1099,11 @@ namespace SystemTrayMenu.UserInterface
                 foreach (RowData itemData in e.AddedItems)
                 {
                     itemData.IsSelected = true;
-                    itemData.UpdateColors();
                 }
 
                 foreach (RowData itemData in e.RemovedItems)
                 {
                     itemData.IsSelected = false;
-                    itemData.UpdateColors();
                 }
             }
             else
@@ -1115,7 +1113,6 @@ namespace SystemTrayMenu.UserInterface
                 foreach (RowData itemData in lv.Items.SourceCollection)
                 {
                     itemData.IsSelected = lv.SelectedItem == itemData;
-                    itemData.UpdateColors();
                 }
             }
         }
@@ -1155,7 +1152,10 @@ namespace SystemTrayMenu.UserInterface
 
         private void ListViewItem_MouseLeave(object sender, MouseEventArgs e)
         {
-            detectLeftMouseButtonClicked = new (null, 0);
+            RowData rowData = (RowData)((ListViewItem)sender).Content;
+            rowData.IsClicked = false;
+
+            countLeftMouseButtonClicked = 0;
 
             if (!isShellContextMenuOpen)
             {
@@ -1163,7 +1163,7 @@ namespace SystemTrayMenu.UserInterface
 
                 if (e.LeftButton == MouseButtonState.Pressed)
                 {
-                    string[] files = new string[] { ((RowData)((ListViewItem)sender).Content).Path };
+                    string[] files = new string[] { rowData.Path };
                     DragDrop.DoDragDrop(this, new DataObject(DataFormats.FileDrop, files), DragDropEffects.Copy);
                 }
             }
@@ -1172,20 +1172,25 @@ namespace SystemTrayMenu.UserInterface
         private void ListViewItem_PreviewMouseDown(object sender, MouseButtonEventArgs e) =>
             CellMouseDown?.Invoke((RowData)((ListViewItem)sender).Content);
 
-        private void ListViewItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e) =>
-            detectLeftMouseButtonClicked = new((ListViewItem)sender, e.ClickCount);
+        private void ListViewItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            RowData rowData = (RowData)((ListViewItem)sender).Content;
+            rowData.IsClicked = true;
+            countLeftMouseButtonClicked = e.ClickCount;
+        }
 
         private void ListViewItem_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            ListViewItem lvi = (ListViewItem)sender;
-            if (detectLeftMouseButtonClicked.Item1 == lvi)
+            RowData rowData = (RowData)((ListViewItem)sender).Content;
+            if (rowData.IsClicked)
             {
                 // Same row has been called with PreviewMouseLeftButtonDown without leaving the item, so we can call it a "click".
                 // The click count is also taken from Down event as it seems not being correct in Up event.
-                ((RowData)lvi.Content).OpenItem(detectLeftMouseButtonClicked.Item2);
+                rowData.OpenItem(countLeftMouseButtonClicked);
             }
 
-            detectLeftMouseButtonClicked = new(null, 0);
+            countLeftMouseButtonClicked = 0;
+            rowData.IsClicked = false;
         }
 
         private void ListViewItem_MouseRightButtonUp(object sender, MouseButtonEventArgs e)

@@ -23,7 +23,9 @@ namespace SystemTrayMenu.DataClasses
         private Brush? borderBrush;
         private ImageSource? columnIcon;
         private string? columnText;
+        private bool isClicked;
         private bool isSelected;
+        private Menu? subMenu;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="RowData"/> class.
@@ -138,6 +140,19 @@ namespace SystemTrayMenu.DataClasses
 
         internal bool IsPendingOpenItem { get; set; }
 
+        internal bool IsClicked
+        {
+            get => isClicked;
+            set
+            {
+                if (value != isClicked)
+                {
+                    isClicked = value;
+                    UpdateColors();
+                }
+            }
+        }
+
         internal bool IsSelected
         {
             get => isSelected;
@@ -146,7 +161,7 @@ namespace SystemTrayMenu.DataClasses
                 if (value != isSelected)
                 {
                     isSelected = value;
-                    CallPropertyChanged();
+                    UpdateColors();
                 }
             }
         }
@@ -187,7 +202,18 @@ namespace SystemTrayMenu.DataClasses
 
         internal Menu? Owner { get; set; }
 
-        internal Menu? SubMenu { get; set; }
+        internal Menu? SubMenu
+        {
+            get => subMenu;
+            set
+            {
+                if (value != subMenu)
+                {
+                    subMenu = value;
+                    UpdateColors();
+                }
+            }
+        }
 
         internal bool HiddenEntry { get; set; }
 
@@ -335,7 +361,12 @@ namespace SystemTrayMenu.DataClasses
 
         internal void UpdateColors()
         {
-            if (SubMenu != null)
+            if (IsClicked)
+            {
+                BorderBrush = MenuDefines.ColorIcons;
+                BackgroundBrush = MenuDefines.ColorSelectedItem;
+            }
+            else if (SubMenu != null)
             {
                 BorderBrush = MenuDefines.ColorOpenFolderBorder;
                 BackgroundBrush = MenuDefines.ColorOpenFolder;
