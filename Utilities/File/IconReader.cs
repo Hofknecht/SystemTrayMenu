@@ -27,6 +27,8 @@ namespace SystemTrayMenu.Utilities
         private static readonly ConcurrentDictionary<string, BitmapSource> IconDictCache = new();
         private static readonly BitmapSource? OverlayImage = (BitmapSource?)Application.Current.Resources["LinkArrowIconImage"];
 
+        private static int maxCOMExceptionLogs = 5;
+
         // see https://github.com/Hofknecht/SystemTrayMenu/issues/209.
         internal static bool IsPreloading { get; set; } = true;
 
@@ -203,7 +205,12 @@ namespace SystemTrayMenu.Utilities
             catch (COMException ex)
             {
                 // This seems to happen very rarely, so we just log it and go on
-                Log.Warn("Reading native Icon failed:", ex);
+                // However, we protect this log message from being called often, so we stop logging after a while
+                if (maxCOMExceptionLogs > 0)
+                {
+                    maxCOMExceptionLogs--; // Note: written by multiple threads, but it is not worth any protection
+                    Log.Warn("Reading native Icon failed:", ex);
+                }
             }
 
             icon?.Dispose();
