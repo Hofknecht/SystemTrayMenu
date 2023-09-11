@@ -1174,21 +1174,12 @@ namespace SystemTrayMenu.UserInterface
 
         private void ListViewItem_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
         {
-            ListViewItem lvi = (ListViewItem)sender;
-            RowData itemData = (RowData)lvi.Content;
-
-#if CONTEXT_MENU_EXPLORER_BEHAVIOR
             // At mouse location
             Point position = Mouse.GetPosition(this);
             position.Offset(Left, Top);
-#else
-            // Snap context menu above the ListViewItem, but horizontally follow the mouse
-            Point position = this.GetRelativeChildPositionTo(lvi);
-            position.Offset(Left + Mouse.GetPosition(lvi).X, Top);
-#endif
 
             isShellContextMenuOpen = true;
-            itemData.OpenShellContextMenu(position);
+            ((RowData)((ListViewItem)sender).Content).OpenShellContextMenu(position);
             isShellContextMenuOpen = false;
         }
     }

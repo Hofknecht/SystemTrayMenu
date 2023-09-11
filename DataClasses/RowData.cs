@@ -281,17 +281,10 @@ namespace SystemTrayMenu.DataClasses
             {
                 if (Owner != null)
                 {
-#if CONTEXT_MENU_EXPLORER_BEHAVIOR
                     // Snap context menu left aligned to the ListViewItem with a small padding, but keep it vertically centered
                     Rect rectChild = Owner.GetDataGridViewChildRect(this);
                     position = Owner.GetRelativeChildPositionTo(Owner.GetDataGridView());
                     position.Offset(Owner.Left + rectChild.Left + 10D, Owner.Top + rectChild.Top + (rectChild.Height / 2D));
-#else
-                    // Snap context menu left and top aligned to the ListViewItem
-                    Rect rectChild = Owner.GetDataGridViewChildRect(this);
-                    position = Owner.GetRelativeChildPositionTo(Owner.GetDataGridView());
-                    position.Offset(Owner.Left + rectChild.Left, Owner.Top + rectChild.Top);
-#endif
                 }
             }
 
