@@ -38,6 +38,7 @@ namespace SystemTrayMenu.UserInterface
 
         private readonly string folderPath;
 
+        private Tuple<ListViewItem?, int> detectLeftMouseButtonClicked = new(null, 0);
         private bool isShellContextMenuOpen;
         private bool directionToRight;
         private Point lastLocation;
@@ -1154,6 +1155,8 @@ namespace SystemTrayMenu.UserInterface
 
         private void ListViewItem_MouseLeave(object sender, MouseEventArgs e)
         {
+            detectLeftMouseButtonClicked = new (null, 0);
+
             if (!isShellContextMenuOpen)
             {
                 CellMouseLeave?.Invoke();
@@ -1170,7 +1173,20 @@ namespace SystemTrayMenu.UserInterface
             CellMouseDown?.Invoke((RowData)((ListViewItem)sender).Content);
 
         private void ListViewItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e) =>
-            ((RowData)((ListViewItem)sender).Content).OpenItem(e.ClickCount);
+            detectLeftMouseButtonClicked = new((ListViewItem)sender, e.ClickCount);
+
+        private void ListViewItem_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            ListViewItem lvi = (ListViewItem)sender;
+            if (detectLeftMouseButtonClicked.Item1 == lvi)
+            {
+                // Same row has been called with PreviewMouseLeftButtonDown without leaving the item, so we can call it a "click".
+                // The click count is also taken from Down event as it seems not being correct in Up event.
+                ((RowData)lvi.Content).OpenItem(detectLeftMouseButtonClicked.Item2);
+            }
+
+            detectLeftMouseButtonClicked = new(null, 0);
+        }
 
         private void ListViewItem_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
         {
