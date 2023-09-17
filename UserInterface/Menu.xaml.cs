@@ -1152,19 +1152,19 @@ namespace SystemTrayMenu.UserInterface
 
         private void ListViewItem_MouseLeave(object sender, MouseEventArgs e)
         {
-            RowData rowData = (RowData)((ListViewItem)sender).Content;
-            rowData.IsClicked = false;
-
-            countLeftMouseButtonClicked = 0;
-
-            if (!isShellContextMenuOpen)
+            var content = ((ListViewItem)sender).Content;
+            if (content is RowData rowData)
             {
-                CellMouseLeave?.Invoke();
-
-                if (e.LeftButton == MouseButtonState.Pressed)
+                rowData.IsClicked = false;
+                countLeftMouseButtonClicked = 0;
+                if (!isShellContextMenuOpen)
                 {
-                    string[] files = new string[] { rowData.Path };
-                    DragDrop.DoDragDrop(this, new DataObject(DataFormats.FileDrop, files), DragDropEffects.Copy);
+                    CellMouseLeave?.Invoke();
+                    if (e.LeftButton == MouseButtonState.Pressed)
+                    {
+                        string[] files = new string[] { rowData.Path };
+                        DragDrop.DoDragDrop(this, new DataObject(DataFormats.FileDrop, files), DragDropEffects.Copy);
+                    }
                 }
             }
         }
