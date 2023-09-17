@@ -1146,14 +1146,18 @@ namespace SystemTrayMenu.UserInterface
         {
             if (!isShellContextMenuOpen)
             {
-                CellMouseEnter?.Invoke((RowData)((ListViewItem)sender).Content);
+                // "DisconnectedItem" protection
+                if (((ListViewItem)sender).Content is RowData rowData)
+                {
+                    CellMouseEnter?.Invoke(rowData);
+                }
             }
         }
 
         private void ListViewItem_MouseLeave(object sender, MouseEventArgs e)
         {
-            var content = ((ListViewItem)sender).Content;
-            if (content is RowData rowData)
+            // "DisconnectedItem" protection
+            if (((ListViewItem)sender).Content is RowData rowData)
             {
                 rowData.IsClicked = false;
                 countLeftMouseButtonClicked = 0;
@@ -1169,39 +1173,56 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        private void ListViewItem_PreviewMouseDown(object sender, MouseButtonEventArgs e) =>
-            CellMouseDown?.Invoke((RowData)((ListViewItem)sender).Content);
+        private void ListViewItem_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            // "DisconnectedItem" protection
+            if (((ListViewItem)sender).Content is RowData rowData)
+            {
+                CellMouseDown?.Invoke(rowData);
+            }
+        }
 
         private void ListViewItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            RowData rowData = (RowData)((ListViewItem)sender).Content;
-            rowData.IsClicked = true;
-            countLeftMouseButtonClicked = e.ClickCount;
+            // "DisconnectedItem" protection
+            if (((ListViewItem)sender).Content is RowData rowData)
+            {
+                rowData.IsClicked = true;
+                countLeftMouseButtonClicked = e.ClickCount;
+            }
         }
 
         private void ListViewItem_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            RowData rowData = (RowData)((ListViewItem)sender).Content;
-            if (rowData.IsClicked)
+            // "DisconnectedItem" protection
+            if (((ListViewItem)sender).Content is RowData rowData)
             {
-                // Same row has been called with PreviewMouseLeftButtonDown without leaving the item, so we can call it a "click".
-                // The click count is also taken from Down event as it seems not being correct in Up event.
-                rowData.OpenItem(countLeftMouseButtonClicked);
+                if (rowData.IsClicked)
+                {
+                    // Same row has been called with PreviewMouseLeftButtonDown without leaving the item, so we can call it a "click".
+                    // The click count is also taken from Down event as it seems not being correct in Up event.
+                    rowData.OpenItem(countLeftMouseButtonClicked);
+                }
+
+                rowData.IsClicked = false;
             }
 
             countLeftMouseButtonClicked = 0;
-            rowData.IsClicked = false;
         }
 
         private void ListViewItem_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
         {
-            // At mouse location
-            Point position = Mouse.GetPosition(this);
-            position.Offset(Left, Top);
+            // "DisconnectedItem" protection
+            if (((ListViewItem)sender).Content is RowData rowData)
+            {
+                // At mouse location
+                Point position = Mouse.GetPosition(this);
+                position.Offset(Left, Top);
 
-            isShellContextMenuOpen = true;
-            ((RowData)((ListViewItem)sender).Content).OpenShellContextMenu(position);
-            isShellContextMenuOpen = false;
+                isShellContextMenuOpen = true;
+                rowData.OpenShellContextMenu(position);
+                isShellContextMenuOpen = false;
+            }
         }
     }
 }
