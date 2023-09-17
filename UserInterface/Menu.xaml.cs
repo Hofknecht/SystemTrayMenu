@@ -1117,25 +1117,6 @@ namespace SystemTrayMenu.UserInterface
             }
         }
 
-        private void ListView_MouseLeave(object sender, MouseEventArgs e)
-        {
-            // In case a sub menu is already open and another item was already selected
-            // but WaitToLoadMenu hasn't take action yet
-            // then we want to reset that selection, so the sub menu selection remains active only
-            if (SubMenu != null)
-            {
-                ListView lv = (ListView)sender;
-                foreach (RowData itemData in lv.Items)
-                {
-                    if (itemData.SubMenu == SubMenu)
-                    {
-                        lv.SelectedItem = itemData;
-                        break;
-                    }
-                }
-            }
-        }
-
         private void ListView_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
         {
             int count = dgv.Items.Count;

@@ -176,7 +176,7 @@
 
             <ListView x:Name="dgv" x:FieldModifier="internal" Margin="6,1,6,1" Padding="0" d:ItemsSource="{d:SampleData ItemCount=50}" SelectionMode="Single" HorizontalContentAlignment="Stretch"
                       Background="{x:Null}" BorderThickness="0" VirtualizingStackPanel.IsVirtualizing="False"
-                      SelectionChanged="ListView_SelectionChanged" MouseLeave="ListView_MouseLeave"
+                      SelectionChanged="ListView_SelectionChanged"
                       ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.ScrollChanged="HandleScrollChanged">
                 <!--ListView."Childs".Border.Padding="0" // In ctor, see: dgv_border -->
                 <ListView.Resources>

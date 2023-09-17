@@ -32,7 +32,6 @@ namespace SystemTrayMenu.Business
         {
             if (MouseActive)
             {
-                MouseSelect?.Invoke(itemData);
                 timerStartLoad.Stop();
                 StopLoadMenu?.Invoke();
                 SetData(itemData);
@@ -72,6 +71,7 @@ namespace SystemTrayMenu.Business
             StopLoadMenu?.Invoke();
             SetData(itemData);
             MouseActive = true;
+            MouseSelect?.Invoke(itemData);
             OpenSubMenu();
         }
 
@@ -88,6 +88,11 @@ namespace SystemTrayMenu.Business
         {
             timerStartLoad.Stop();
             StopLoadMenu?.Invoke();
+            if (MouseActive && currentItemData != null)
+            {
+                MouseSelect?.Invoke(currentItemData);
+            }
+
             OpenSubMenu();
         }
 
