@@ -27,8 +27,6 @@ namespace SystemTrayMenu.Utilities
         private static readonly ConcurrentDictionary<string, BitmapSource> IconDictCache = new();
         private static readonly BitmapSource? OverlayImage = (BitmapSource?)Application.Current.Resources["LinkArrowIconImage"];
 
-        private static int maxCOMExceptionLogs = 5;
-
         // see https://github.com/Hofknecht/SystemTrayMenu/issues/209.
         internal static bool IsPreloading { get; set; } = true;
 
