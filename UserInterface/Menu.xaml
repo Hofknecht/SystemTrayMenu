@@ -183,16 +183,43 @@
                     <!-- Set min-size according to: learn.microsoft.com/en-us/dotnet/desktop/wpf/controls/how-to-customize-the-thumb-size-on-a-scrollbar#create-a-scrollbar-with-a-minimum-thumb-size -->
                     <!-- Thumb's minimum height is half of VerticalScrollBarButtonHeightKey -->
                     <sys:Double x:Key="{x:Static SystemParameters.VerticalScrollBarButtonHeightKey}">116</sys:Double>
+                    <Storyboard x:Key="OpenAnimationStoryboard">
+                        <DoubleAnimation
+                            Storyboard.TargetName="OpenAnimationBorder"
+                            Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[0].(GradientStop.Offset)"
+                            From="-0.4" To="1.0" Duration="0:0:0.6" />
+                        <DoubleAnimation
+                            Storyboard.TargetName="OpenAnimationBorder"
+                            Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[1].(GradientStop.Offset)"
+                            From="-0.2" To="1.3" Duration="0:0:0.6" />
+                        <DoubleAnimation
+                            Storyboard.TargetName="OpenAnimationBorder"
+                            Storyboard.TargetProperty="(Panel.Background).(GradientBrush.GradientStops)[2].(GradientStop.Offset)"
+                            From="-0.0" To="1.5" Duration="0:0:0.6" />
+                    </Storyboard>
                 </ListView.Resources>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Border Height="{DynamicResource RowHeight}" BorderBrush="{Binding BorderBrush}" Background="{Binding BackgroundBrush}" BorderThickness="1">
-                            <StackPanel Orientation="Horizontal">
-                                <Image Width="{DynamicResource ColumnIconWidth}" Margin="2,0,0,0" Source="{Binding ColumnIcon}" />
-                                <TextBlock MaxWidth="{DynamicResource ColumnTextMaxWidth}" Margin="5,0,2,0" Padding="0" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"
+                        <Border Height="{DynamicResource RowHeight}" Background="{Binding BackgroundBrush}" BorderBrush="{Binding BorderBrush}" BorderThickness="1">
+                            <Border x:Name="OpenAnimationBorder" BorderThickness="0">
+                                <Border.Background>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                        <LinearGradientBrush.GradientStops>
+                                            <GradientStopCollection>
+                                                <GradientStop Color="#00000000" Offset="-0.4"/>
+                                                <GradientStop Color="#8800ff00" Offset="-0.2"/>
+                                                <GradientStop Color="#00000000" Offset="-0.0" />
+                                            </GradientStopCollection>
+                                        </LinearGradientBrush.GradientStops>
+                                    </LinearGradientBrush>
+                                </Border.Background>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Width="{DynamicResource ColumnIconWidth}" Margin="2,0,0,0" Source="{Binding ColumnIcon}" />
+                                    <TextBlock MaxWidth="{DynamicResource ColumnTextMaxWidth}" Margin="5,0,2,0" Padding="0" VerticalAlignment="Center" TextTrimming="CharacterEllipsis"
                                            Text="{Binding ColumnText}" Foreground="{x:Static stm:MenuDefines.ColorForeground}" />
-                                <!-- TODO: Optional or only for trimmed entries: ToolTip="{Binding ColumnText}" -->
-                            </StackPanel>
+                                    <!-- TODO: Optional or only for trimmed entries: ToolTip="{Binding ColumnText}" -->
+                                </StackPanel>
+                            </Border>
                         </Border>
                     </DataTemplate>
                 </ListView.ItemTemplate>

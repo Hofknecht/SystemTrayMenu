@@ -13,6 +13,7 @@ namespace SystemTrayMenu.UserInterface
     using System.Windows.Data;
     using System.Windows.Input;
     using System.Windows.Media;
+    using System.Windows.Media.Animation;
     using SystemTrayMenu.Business;
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.DllImports;
@@ -305,7 +306,29 @@ namespace SystemTrayMenu.UserInterface
 
         public override string ToString() => nameof(Menu) + " L" + Level.ToString() + ": " + Title;
 
-        internal void RiseItemOpened(RowData item) => CellOpenOnClick?.Invoke(item);
+        internal void RiseItemExecuted(RowData rowData)
+        {
+            // Search reverse to increase speed, however ideally it should match on first hit
+            for (int i = rowData.RowIndex; i > 0; i--)
+            {
+                ListViewItem? lvi = dgv.FindVisualChildOfType<ListViewItem>(i);
+                if (lvi == null)
+                {
+                    return;
+                }
+
+                if (lvi.Content == rowData)
+                {
+                    Border? border_outer = lvi.FindVisualChildOfType<Border>();
+                    Border? border_inner = border_outer?.FindVisualChildOfType<Border>();
+                    border_inner?.BeginStoryboard((Storyboard)dgv.FindResource("OpenAnimationStoryboard"));
+
+                    break;
+                }
+            }
+        }
+
+        internal void RiseItemOpened(RowData rowData) => CellOpenOnClick?.Invoke(rowData);
 
         internal void RiseStartLoadSubMenu(RowData rowData) => StartLoadSubMenu?.Invoke(rowData);
 

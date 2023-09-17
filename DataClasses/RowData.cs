@@ -265,6 +265,8 @@ namespace SystemTrayMenu.DataClasses
                     {
                         doCloseAfterOpen = true;
                     }
+
+                    Owner?.RiseItemExecuted(this);
                 }
             }
             else
