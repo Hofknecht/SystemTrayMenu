@@ -308,22 +308,17 @@ namespace SystemTrayMenu.UserInterface
 
         internal void RiseItemExecuted(RowData rowData)
         {
-            // Search reverse to increase speed, however ideally it should match on first hit
-            for (int i = rowData.RowIndex; i > 0; i--)
+            ListViewItem? lvi;
+            int i = 0;
+            while ((lvi = dgv.FindVisualChildOfType<ListViewItem>(i++)) != null)
             {
-                ListViewItem? lvi = dgv.FindVisualChildOfType<ListViewItem>(i);
-                if (lvi == null)
-                {
-                    return;
-                }
-
                 if (lvi.Content == rowData)
                 {
                     Border? border_outer = lvi.FindVisualChildOfType<Border>();
                     Border? border_inner = border_outer?.FindVisualChildOfType<Border>();
                     border_inner?.BeginStoryboard((Storyboard)dgv.FindResource("OpenAnimationStoryboard"));
 
-                    break;
+                    return;
                 }
             }
         }
