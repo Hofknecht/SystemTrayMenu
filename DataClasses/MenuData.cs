@@ -9,22 +9,22 @@ namespace SystemTrayMenu.DataClasses
     internal enum MenuDataDirectoryState
     {
         /// <summary>
-        /// State not defined or data still loading
+        /// State not defined or data still loading.
         /// </summary>
         Undefined,
 
         /// <summary>
-        /// Data is available
+        /// Data is available.
         /// </summary>
         Valid,
 
         /// <summary>
-        /// Loading finished but no data available
+        /// Loading finished but no data available.
         /// </summary>
         Empty,
 
         /// <summary>
-        /// Loading failed, so no data available
+        /// Loading failed, so no data available.
         /// </summary>
         NoAccess,
     }

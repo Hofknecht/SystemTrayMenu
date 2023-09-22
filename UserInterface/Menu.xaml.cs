@@ -359,42 +359,6 @@ namespace SystemTrayMenu.UserInterface
             textBoxSearch.Focus();
         }
 
-        internal void SetSubMenuState(MenuDataDirectoryState state)
-        {
-            if (Config.ShowFunctionKeyOpenFolder)
-            {
-                buttonOpenFolder.Visibility = Visibility.Visible;
-            }
-
-            pictureBoxLoading.Visibility = Visibility.Collapsed;
-
-            switch (state)
-            {
-                case MenuDataDirectoryState.Valid:
-                    if (Config.ShowCountOfElementsBelow)
-                    {
-                        ((INotifyCollectionChanged)dgv.Items).CollectionChanged += ListView_CollectionChanged;
-                        ListView_CollectionChanged(this, new(NotifyCollectionChangedAction.Reset));
-                    }
-                    else
-                    {
-                        labelStatus.Visibility = Visibility.Collapsed;
-                    }
-
-                    break;
-                case MenuDataDirectoryState.Empty:
-                    searchPanel.Visibility = Visibility.Collapsed;
-                    labelStatus.Content = Translator.GetText("Directory empty");
-                    break;
-                case MenuDataDirectoryState.NoAccess:
-                    searchPanel.Visibility = Visibility.Collapsed;
-                    labelStatus.Content = Translator.GetText("Directory inaccessible");
-                    break;
-                default:
-                    break;
-            }
-        }
-
         // TODO: Check if we can just use original IsMouseOver instead?  (Check if it requires Mouse.Capture(this))
         internal new bool IsMouseOver()
         {
@@ -900,6 +864,42 @@ namespace SystemTrayMenu.UserInterface
             }
 
             return true;
+        }
+
+        private void SetSubMenuState(MenuDataDirectoryState state)
+        {
+            if (Config.ShowFunctionKeyOpenFolder)
+            {
+                buttonOpenFolder.Visibility = Visibility.Visible;
+            }
+
+            pictureBoxLoading.Visibility = Visibility.Collapsed;
+
+            switch (state)
+            {
+                case MenuDataDirectoryState.Valid:
+                    if (Config.ShowCountOfElementsBelow)
+                    {
+                        ((INotifyCollectionChanged)dgv.Items).CollectionChanged += ListView_CollectionChanged;
+                        ListView_CollectionChanged(this, new(NotifyCollectionChangedAction.Reset));
+                    }
+                    else
+                    {
+                        labelStatus.Visibility = Visibility.Collapsed;
+                    }
+
+                    break;
+                case MenuDataDirectoryState.Empty:
+                    searchPanel.Visibility = Visibility.Collapsed;
+                    labelStatus.Content = Translator.GetText("Directory empty");
+                    break;
+                case MenuDataDirectoryState.NoAccess:
+                    searchPanel.Visibility = Visibility.Collapsed;
+                    labelStatus.Content = Translator.GetText("Directory inaccessible");
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void FadeOut_Completed(object sender, EventArgs e) => Hide();
