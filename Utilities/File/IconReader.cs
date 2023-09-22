@@ -27,9 +27,6 @@ namespace SystemTrayMenu.Utilities
         private static readonly ConcurrentDictionary<string, BitmapSource> IconDictCache = new();
         private static readonly BitmapSource? OverlayImage = (BitmapSource?)Application.Current.Resources["LinkArrowIconImage"];
 
-        // see https://github.com/Hofknecht/SystemTrayMenu/issues/209.
-        internal static bool IsPreloading { get; set; } = true;
-
         internal static void ClearCacheWhenLimitReached()
         {
             if (IconDictCache.Count > Properties.Settings.Default.ClearCacheIfMoreThanThisNumberOfItems)
@@ -92,7 +89,8 @@ namespace SystemTrayMenu.Utilities
             string path,
             bool linkOverlay,
             bool checkPersistentFirst,
-            Action<BitmapSource?> onIconLoaded)
+            Action<BitmapSource?> onIconLoaded,
+            bool synchronousLoading)
         {
             bool cacheHit;
             string key = path;
@@ -101,7 +99,7 @@ namespace SystemTrayMenu.Utilities
             {
                 cacheHit = false;
 
-                if (IsPreloading)
+                if (synchronousLoading)
                 {
                     cacheHit = true;
                     icon = DictIconCache(checkPersistentFirst).GetOrAdd(key, FactoryIconFolderSTA);

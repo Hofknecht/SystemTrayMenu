@@ -37,14 +37,17 @@ namespace SystemTrayMenu.Business
         private readonly DispatcherTimer timerStillActiveCheck = new();
         private readonly DispatcherTimer waitLeave = new();
         private readonly Menu mainMenu;
+
         private TaskbarPosition taskbarPosition = TaskbarPosition.Unknown;
+        private bool mainMenuPreloading = true;
         private bool showMenuAfterMainPreload;
         private TaskbarLogo? taskbarLogo;
+        private DateTime lastUserSwitchOpenClose = DateTime.Now;
 
         public Menus()
         {
             SingleAppInstance.Wakeup += SwitchOpenCloseByHotKey;
-            menuNotifyIcon.Click += () => SwitchOpenClose(true, false);
+            menuNotifyIcon.Click += () => UserSwitchOpenClose(true);
 
             if (!keyboardInput.RegisterHotKey(Settings.Default.HotKey))
             {
@@ -164,33 +167,37 @@ namespace SystemTrayMenu.Business
             if (Settings.Default.ShowInTaskbar)
             {
                 taskbarLogo = new();
-                taskbarLogo.Activated += (_, _) =>
-                {
-                    // User started with taskbar or clicked on taskbar: remember to open menu after preload has finished
-                    showMenuAfterMainPreload = true;
-                    SwitchOpenClose(true, true);
-                };
-
                 taskbarLogo.Show();
+                taskbarLogo.Activated += (_, _) => UserSwitchOpenClose(true);
             }
-            else
-            {
-                SwitchOpenClose(false, true);
-            }
+
+            SwitchOpenClose();
         }
 
-        internal void SwitchOpenClose(bool byClick, bool allowPreloading)
+        internal void UserSwitchOpenClose(bool byClick)
         {
-            // Ignore open close events during main preload #248
-            if (IconReader.IsPreloading && !allowPreloading)
+            if (mainMenuPreloading)
             {
-                // User pressed hotkey or clicked on notifyicon: remember to open menu after preload has finished
                 showMenuAfterMainPreload = true;
                 return;
             }
 
+            DateTime now = DateTime.Now;
+            if ((now - lastUserSwitchOpenClose).TotalMilliseconds < 500)
+            {
+                // Prevent open/close spamming
+                return;
+            }
+
+            lastUserSwitchOpenClose = now;
+
             waitToOpenMenu.MouseActive = byClick;
 
+            SwitchOpenClose();
+        }
+
+        internal void SwitchOpenClose()
+        {
             if (workerMainMenu.IsBusy)
             {
                 // Stop current loading process of main menu
@@ -291,11 +298,11 @@ namespace SystemTrayMenu.Business
                 switch (menuData.DirectoryState)
                 {
                     case MenuDataDirectoryState.Valid:
-                        if (IconReader.IsPreloading)
+                        if (mainMenuPreloading)
                         {
                             InitializeMenu(mainMenu, menuData.RowDatas); // Level 0 Main Menu
 
-                            IconReader.IsPreloading = false;
+                            mainMenuPreloading = false;
                             if (showMenuAfterMainPreload)
                             {
                                 mainMenu.ShowWithFade(false, false);
@@ -523,7 +530,7 @@ namespace SystemTrayMenu.Business
             }
         }
 
-        private void SwitchOpenCloseByHotKey() => mainMenu.Dispatcher.Invoke(() => SwitchOpenClose(false, false));
+        private void SwitchOpenCloseByHotKey() => mainMenu.Dispatcher.Invoke(() => UserSwitchOpenClose(false));
 
         private void SystemEvents_DisplaySettingsChanged(object? sender, EventArgs e) =>
             mainMenu.Dispatcher.Invoke(() => mainMenu.RelocateOnNextShow = true);
@@ -719,7 +726,7 @@ namespace SystemTrayMenu.Business
 
                         IconReader.RemoveIconFromCache(rowData.Path);
                         rowDataRenamed.HiddenEntry = hasHiddenFlag;
-                        rowDataRenamed.LoadIcon();
+                        rowDataRenamed.LoadIcon(false);
                         rowDatas.Add(rowDataRenamed);
                     }
                     else
@@ -799,7 +806,7 @@ namespace SystemTrayMenu.Business
                 }
 
                 rowData.HiddenEntry = hasHiddenFlag;
-                rowData.LoadIcon();
+                rowData.LoadIcon(false);
 
                 var items = (List<RowData>)menu.GetDataGridView().Items.SourceCollection;
                 List<RowData> rowDatas = new(items.Count + 1) { rowData };

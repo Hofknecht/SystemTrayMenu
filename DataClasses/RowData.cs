@@ -229,13 +229,13 @@ namespace SystemTrayMenu.DataClasses
         /// <param name="propertyName">Name of the changing property.</param>
         public void CallPropertyChanged([CallerMemberName] string? propertyName = null) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
-        internal void LoadIcon()
+        internal void LoadIcon(bool synchronousLoading)
         {
             bool cacheHit;
 
             if (IsPointingToFolder)
             {
-                cacheHit = IconReader.GetFolderIconWithCache(Path, ShowOverlay, Level == 0, UpdateFinalIcon);
+                cacheHit = IconReader.GetFolderIconWithCache(Path, ShowOverlay, Level == 0, UpdateFinalIcon, synchronousLoading);
             }
             else
             {
