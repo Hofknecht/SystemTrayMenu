@@ -9,6 +9,7 @@ namespace SystemTrayMenu
     using System.Windows;
     using System.Windows.Media;
     using Microsoft.Win32;
+    using SystemTrayMenu.DllImports;
     using SystemTrayMenu.Properties;
     using SystemTrayMenu.UserInterface.FolderBrowseDialog;
     using SystemTrayMenu.Utilities;
@@ -160,6 +161,10 @@ namespace SystemTrayMenu
                 {
                     isDarkMode = true;
                 }
+
+                // Required for native UI rendering like the ShellContextMenu
+                NativeMethods.SetPreferredAppMode(isDarkMode ? NativeMethods.PreferredAppMode.ForceDark : NativeMethods.PreferredAppMode.ForceLight);
+                NativeMethods.FlushMenuThemes();
 
                 readDarkModeDone = true;
             }
