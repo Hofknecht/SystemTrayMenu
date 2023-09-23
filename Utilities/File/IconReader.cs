@@ -30,7 +30,7 @@ namespace SystemTrayMenu.Utilities
         private static readonly BlockingCollection<Action> IconFactoryQueue = new();
         private static readonly List<Thread> IconFactoryThreadPoolSTA = new(16);
 
-        static IconReader()
+        internal static void Startup()
         {
             for (int i = 0; i < IconFactoryThreadPoolSTA.Capacity; i++)
             {
@@ -43,11 +43,37 @@ namespace SystemTrayMenu.Utilities
 
             void IconFactoryWorkerSTA()
             {
-                while(true)
+                while (true)
                 {
-                    IconFactoryQueue.Take()();
+                    try
+                    {
+                        IconFactoryQueue.Take()();
+                    }
+                    catch (ThreadInterruptedException)
+                    {
+                        // Shutdown
+                        break;
+                    }
+                    catch
+                    {
+                    }
                 }
             }
+        }
+
+        internal static void Shutdown()
+        {
+            foreach (Thread thread in IconFactoryThreadPoolSTA)
+            {
+                thread.Interrupt();
+            }
+
+            foreach (Thread thread in IconFactoryThreadPoolSTA)
+            {
+                thread.Join(400);
+            }
+
+            IconFactoryThreadPoolSTA.Clear();
         }
 
         internal static void ClearCacheWhenLimitReached()

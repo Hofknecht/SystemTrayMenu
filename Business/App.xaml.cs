@@ -36,6 +36,8 @@ namespace SystemTrayMenu
             Deactivated += (_, _) => IsActiveApp = false;
             Startup += (_, _) =>
             {
+                IconReader.Startup();
+
                 menus = new();
                 menus.Startup();
 
@@ -80,6 +82,8 @@ namespace SystemTrayMenu
         {
             if (!isDisposed)
             {
+                IconReader.Shutdown();
+
                 if (joystickHelper != null)
                 {
                     if (menus != null)
