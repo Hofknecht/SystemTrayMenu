@@ -23,7 +23,9 @@ namespace SystemTrayMenu.Utilities
     /// </summary>
     internal static class IconReader
     {
-        private static readonly BitmapSource? OverlayImage = (BitmapSource?)Application.Current.Resources["LinkArrowIconImage"];
+        internal static readonly BitmapSource LoadingImage = (BitmapSource)Application.Current.Resources["LoadingIconImage"];
+        internal static readonly BitmapSource NotFoundImage = (BitmapSource)Application.Current.Resources["NotFoundIconImage"];
+        private static readonly BitmapSource OverlayImage = (BitmapSource)Application.Current.Resources["LinkArrowIconImage"];
 
         private static readonly ConcurrentDictionary<string, BitmapSource> IconDictPersistent = new();
         private static readonly ConcurrentDictionary<string, BitmapSource> IconDictCache = new();
@@ -212,7 +214,7 @@ namespace SystemTrayMenu.Utilities
                 {
                     result = TryCreateBitmapSourceFromIcon(resolvedPath, icon);
                     icon.Dispose();
-                    if (result != null && linkOverlay && OverlayImage != null)
+                    if (result != null && linkOverlay)
                     {
                         result = ImagingHelper.CreateIconWithOverlay(result, OverlayImage);
                     }
@@ -265,7 +267,7 @@ namespace SystemTrayMenu.Utilities
         private static BitmapSource GetIconAsBitmapSourceSTA(string path, string resolvedPath, bool linkOverlay, bool isFolder)
         {
             BitmapSource? bitmapSource = TryGetIconAsBitmapSourceSTA(path, resolvedPath, linkOverlay, isFolder);
-            bitmapSource ??= (BitmapSource)Application.Current.Resources["NotFoundIconImage"];
+            bitmapSource ??= NotFoundImage;
             bitmapSource.Freeze(); // Make it accessible for any thread
             return bitmapSource;
         }

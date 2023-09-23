@@ -245,7 +245,7 @@ namespace SystemTrayMenu.DataClasses
             if (!cacheHit)
             {
                 IconLoading = true;
-                ColumnIcon = (ImageSource?)Application.Current.Resources["LoadingIconImage"]; // TODO: Maybe add rotation animation like for the loading Menu icon? (See: pictureBoxLoading, LoadingRotation)
+                ColumnIcon = IconReader.LoadingImage; // TODO: Maybe add rotation animation like for the loading Menu icon? (See: pictureBoxLoading, LoadingRotation)
             }
         }
 
@@ -389,7 +389,7 @@ namespace SystemTrayMenu.DataClasses
         {
             if (icon == null)
             {
-                icon = (BitmapSource)Application.Current.Resources["NotFoundIconImage"];
+                icon = IconReader.NotFoundImage;
             }
             else if (HiddenEntry)
             {
