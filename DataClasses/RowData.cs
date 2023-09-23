@@ -229,20 +229,9 @@ namespace SystemTrayMenu.DataClasses
         /// <param name="propertyName">Name of the changing property.</param>
         public void CallPropertyChanged([CallerMemberName] string? propertyName = null) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
-        internal void LoadIcon(bool synchronousLoading)
+        internal void LoadIcon(bool isMainMenu)
         {
-            bool cacheHit;
-
-            if (IsPointingToFolder)
-            {
-                cacheHit = IconReader.GetFolderIconWithCache(Path, ShowOverlay, Level == 0, UpdateFinalIcon, synchronousLoading);
-            }
-            else
-            {
-                cacheHit = IconReader.GetFileIconWithCache(Path, ResolvedPath, ShowOverlay, Level == 0, UpdateFinalIcon, synchronousLoading);
-            }
-
-            if (!cacheHit)
+            if (!IconReader.GetIconAsync(IsPointingToFolder, Path, ResolvedPath, ShowOverlay, isMainMenu, UpdateFinalIcon, isMainMenu))
             {
                 IconLoading = true;
                 ColumnIcon = IconReader.LoadingImage; // TODO: Maybe add rotation animation like for the loading Menu icon? (See: pictureBoxLoading, LoadingRotation)
@@ -385,16 +374,12 @@ namespace SystemTrayMenu.DataClasses
             }
         }
 
-        private void UpdateFinalIcon(BitmapSource? icon)
+        private void UpdateFinalIcon(BitmapSource icon)
         {
-            if (icon == null)
-            {
-                icon = IconReader.NotFoundImage;
-            }
-            else if (HiddenEntry)
+            if (HiddenEntry)
             {
                 icon = ImagingHelper.ApplyOpactiy(icon, 0.5d);
-                icon?.Freeze(); // Make it accessible for any thread
+                icon.Freeze(); // Make it accessible for any thread
             }
 
             IconLoading = false;

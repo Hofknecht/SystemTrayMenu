@@ -726,7 +726,7 @@ namespace SystemTrayMenu.Business
 
                         IconReader.RemoveIconFromCache(rowData.Path);
                         rowDataRenamed.HiddenEntry = hasHiddenFlag;
-                        rowDataRenamed.LoadIcon(false);
+                        rowDataRenamed.LoadIcon(true);
                         rowDatas.Add(rowDataRenamed);
                     }
                     else
@@ -806,7 +806,7 @@ namespace SystemTrayMenu.Business
                 }
 
                 rowData.HiddenEntry = hasHiddenFlag;
-                rowData.LoadIcon(false);
+                rowData.LoadIcon(true);
 
                 var items = (List<RowData>)menu.GetDataGridView().Items.SourceCollection;
                 List<RowData> rowDatas = new(items.Count + 1) { rowData };

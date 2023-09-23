@@ -29,27 +29,29 @@ namespace SystemTrayMenu.Utilities
 
         private static readonly ConcurrentDictionary<string, BitmapSource> IconDictPersistent = new();
         private static readonly ConcurrentDictionary<string, BitmapSource> IconDictCache = new();
-        private static readonly BlockingCollection<Action> IconFactoryQueue = new();
+        private static readonly BlockingCollection<Action> IconFactoryQueueSTA = new();
         private static readonly List<Thread> IconFactoryThreadPoolSTA = new(16);
 
         internal static void Startup()
         {
             for (int i = 0; i < IconFactoryThreadPoolSTA.Capacity; i++)
             {
-                Thread thread = new(IconFactoryWorkerSTA);
-                thread.Name = "IconFactory STA #" + i.ToString();
+                Thread thread = new(IconFactoryWorkerSTA)
+                {
+                    Name = "IconFactory STA #" + i.ToString(),
+                };
                 thread.SetApartmentState(ApartmentState.STA);
                 thread.Start();
                 IconFactoryThreadPoolSTA.Add(thread);
             }
 
-            void IconFactoryWorkerSTA()
+            static void IconFactoryWorkerSTA()
             {
                 while (true)
                 {
                     try
                     {
-                        IconFactoryQueue.Take()();
+                        IconFactoryQueueSTA.Take()();
                     }
                     catch (ThreadInterruptedException)
                     {
@@ -89,48 +91,64 @@ namespace SystemTrayMenu.Utilities
 
         internal static void RemoveIconFromCache(string path) => IconDictPersistent.Remove(path, out _);
 
-        internal static bool GetFileIconWithCache(
+        /// <summary>
+        /// Loads an Icon requested by parameters.
+        /// </summary>
+        /// <param name="isFolder">Icon is a folder or file icon.</param>
+        /// <param name="path">Path to the file or directory entry.</param>
+        /// <param name="resolvedPath">Path to the file or directory entry which 'path' is pointing at.</param>
+        /// <param name="linkOverlay">Apply the link overlay to the icon.</param>
+        /// <param name="persistentEntry">Load from or into persistent cache.</param>
+        /// <param name="onIconLoaded">Callback called when icon got loaded.</param>
+        /// <param name="synchronousLoading">Force synchronous loading. e.g. during preloading on startup.</param>
+        /// <returns>True = Icon was loaded synchronously, False = Icon will be loaded in the background.</returns>
+        internal static bool GetIconAsync(
+            bool isFolder,
             string path,
             string resolvedPath,
             bool linkOverlay,
-            bool checkPersistentFirst,
-            Action<BitmapSource?> onIconLoaded,
+            bool persistentEntry,
+            Action<BitmapSource> onIconLoaded,
             bool synchronousLoading)
         {
-            string key;
-            string extension = Path.GetExtension(path);
-            if (IsExtensionWithSameIcon(extension))
+            string key = path;
+
+            if (!isFolder)
             {
-                // Generic file extension
-                key = extension + ":" + linkOverlay;
-                checkPersistentFirst = true; // Always store them in persistent cache
-                synchronousLoading = true; // Always load them after another
+                string extension = Path.GetExtension(path);
+                if (IsExtensionWithSameIcon(extension))
+                {
+                    // Generic file extension
+                    key = extension + ":" + linkOverlay;
+                    persistentEntry = true; // Always store them in persistent cache
+                }
             }
-            else
+
+            if (!DictIconCache(persistentEntry).TryGetValue(key, out BitmapSource? icon) &&
+                !DictIconCache(!persistentEntry).TryGetValue(key, out icon))
             {
-                key = path;
+                if (synchronousLoading)
+                {
+                    icon = DictIconCache(persistentEntry).GetOrAdd(key, FactoryIconSTA);
+                }
+                else
+                {
+                    IconFactoryQueueSTA.Add(() =>
+                    {
+                        BitmapSource icon = DictIconCache(persistentEntry).GetOrAdd(key, FactoryIconSTA);
+                        onIconLoaded(icon);
+                    });
+
+                    return false;
+                }
             }
 
-            return CacheGetOrAddIcon(path, checkPersistentFirst, onIconLoaded, synchronousLoading, FactoryIconFileSTA);
+            onIconLoaded(icon);
+            return true;
 
-            BitmapSource FactoryIconFileSTA(string keyExtension)
+            BitmapSource FactoryIconSTA(string keyExtension)
             {
-                return GetIconAsBitmapSourceSTA(path, resolvedPath, linkOverlay, false);
-            }
-        }
-
-        internal static bool GetFolderIconWithCache(
-            string path,
-            bool linkOverlay,
-            bool checkPersistentFirst,
-            Action<BitmapSource?> onIconLoaded,
-            bool synchronousLoading)
-        {
-            return CacheGetOrAddIcon(path, checkPersistentFirst, onIconLoaded, synchronousLoading, FactoryIconFolderSTA);
-
-            BitmapSource FactoryIconFolderSTA(string keyExtension)
-            {
-                return GetIconAsBitmapSourceSTA(path, path, linkOverlay, true);
+                return GetIconAsBitmapSourceSTA(path, resolvedPath, linkOverlay, isFolder);
             }
         }
 
@@ -147,23 +165,23 @@ namespace SystemTrayMenu.Utilities
 
         private static bool CacheGetOrAddIcon(
             string key,
-            bool checkPersistentFirst,
+            bool persistentEntry,
             Action<BitmapSource?> onIconLoaded,
             bool synchronousLoading,
             Func<string, BitmapSource> factory)
         {
-            if (!DictIconCache(checkPersistentFirst).TryGetValue(key, out BitmapSource? icon) &&
-                !DictIconCache(!checkPersistentFirst).TryGetValue(key, out icon))
+            if (!DictIconCache(persistentEntry).TryGetValue(key, out BitmapSource? icon) &&
+                !DictIconCache(!persistentEntry).TryGetValue(key, out icon))
             {
                 if (synchronousLoading)
                 {
-                    icon = DictIconCache(checkPersistentFirst).GetOrAdd(key, factory);
+                    icon = DictIconCache(persistentEntry).GetOrAdd(key, factory);
                 }
                 else
                 {
-                    IconFactoryQueue.Add(() =>
+                    IconFactoryQueueSTA.Add(() =>
                     {
-                        BitmapSource icon = DictIconCache(checkPersistentFirst).GetOrAdd(key, factory);
+                        BitmapSource icon = DictIconCache(persistentEntry).GetOrAdd(key, factory);
                         onIconLoaded(icon);
                     });
 
