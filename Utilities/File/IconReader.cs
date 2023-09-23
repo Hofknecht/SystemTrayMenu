@@ -23,9 +23,32 @@ namespace SystemTrayMenu.Utilities
     /// </summary>
     internal static class IconReader
     {
+        private static readonly BitmapSource? OverlayImage = (BitmapSource?)Application.Current.Resources["LinkArrowIconImage"];
+
         private static readonly ConcurrentDictionary<string, BitmapSource> IconDictPersistent = new();
         private static readonly ConcurrentDictionary<string, BitmapSource> IconDictCache = new();
-        private static readonly BitmapSource? OverlayImage = (BitmapSource?)Application.Current.Resources["LinkArrowIconImage"];
+        private static readonly BlockingCollection<Action> IconFactoryQueue = new();
+        private static readonly List<Thread> IconFactoryThreadPoolSTA = new(16);
+
+        static IconReader()
+        {
+            for (int i = 0; i < IconFactoryThreadPoolSTA.Capacity; i++)
+            {
+                Thread thread = new(IconFactoryWorkerSTA);
+                thread.Name = "IconFactory STA #" + i.ToString();
+                thread.SetApartmentState(ApartmentState.STA);
+                thread.Start();
+                IconFactoryThreadPoolSTA.Add(thread);
+            }
+
+            void IconFactoryWorkerSTA()
+            {
+                while(true)
+                {
+                    IconFactoryQueue.Take()();
+                }
+            }
+        }
 
         internal static void ClearCacheWhenLimitReached()
         {
@@ -110,14 +133,11 @@ namespace SystemTrayMenu.Utilities
                 }
                 else
                 {
-                    Thread thread = new(UpdateIconInBackgroundSTA);
-                    thread.SetApartmentState(ApartmentState.STA);
-                    thread.Start();
-                    void UpdateIconInBackgroundSTA()
+                    IconFactoryQueue.Add(() =>
                     {
                         BitmapSource icon = DictIconCache(checkPersistentFirst).GetOrAdd(key, factory);
                         onIconLoaded(icon);
-                    }
+                    });
 
                     return false;
                 }
