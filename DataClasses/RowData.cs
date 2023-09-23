@@ -239,7 +239,7 @@ namespace SystemTrayMenu.DataClasses
             }
             else
             {
-                cacheHit = IconReader.GetFileIconWithCache(Path, ResolvedPath, ShowOverlay, Level == 0, UpdateFinalIcon);
+                cacheHit = IconReader.GetFileIconWithCache(Path, ResolvedPath, ShowOverlay, Level == 0, UpdateFinalIcon, synchronousLoading);
             }
 
             if (!cacheHit)

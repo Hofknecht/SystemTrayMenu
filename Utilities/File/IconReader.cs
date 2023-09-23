@@ -43,46 +43,29 @@ namespace SystemTrayMenu.Utilities
             string resolvedPath,
             bool linkOverlay,
             bool checkPersistentFirst,
-            Action<BitmapSource?> onIconLoaded)
+            Action<BitmapSource?> onIconLoaded,
+            bool synchronousLoading)
         {
-            bool cacheHit;
             string key;
             string extension = Path.GetExtension(path);
             if (IsExtensionWithSameIcon(extension))
             {
-                key = extension + linkOverlay;
+                // Generic file extension
+                key = extension + ":" + linkOverlay;
+                checkPersistentFirst = true; // Always store them in persistent cache
+                synchronousLoading = true; // Always load them after another
             }
             else
             {
                 key = path;
             }
 
-            if (!DictIconCache(checkPersistentFirst).TryGetValue(key, out BitmapSource? icon) &&
-                !DictIconCache(!checkPersistentFirst).TryGetValue(key, out icon))
+            return CacheGetOrAddIcon(path, checkPersistentFirst, onIconLoaded, synchronousLoading, FactoryIconFileSTA);
+
+            BitmapSource FactoryIconFileSTA(string keyExtension)
             {
-                cacheHit = false;
-
-                Thread thread = new(UpdateIconInBackgroundSTA);
-                thread.SetApartmentState(ApartmentState.STA);
-                thread.Start();
-                void UpdateIconInBackgroundSTA()
-                {
-                    BitmapSource icon = DictIconCache(checkPersistentFirst).GetOrAdd(key, FactoryIconFolderSTA);
-                    onIconLoaded(icon);
-                }
-
-                BitmapSource FactoryIconFolderSTA(string keyExtension)
-                {
-                    return GetIconAsBitmapSourceSTA(path, resolvedPath, linkOverlay, false);
-                }
+                return GetIconAsBitmapSourceSTA(path, resolvedPath, linkOverlay, false);
             }
-            else
-            {
-                cacheHit = true;
-                onIconLoaded(icon);
-            }
-
-            return cacheHit;
         }
 
         internal static bool GetFolderIconWithCache(
@@ -92,43 +75,12 @@ namespace SystemTrayMenu.Utilities
             Action<BitmapSource?> onIconLoaded,
             bool synchronousLoading)
         {
-            bool cacheHit;
-            string key = path;
-            if (!DictIconCache(checkPersistentFirst).TryGetValue(key, out BitmapSource? icon) &&
-                !DictIconCache(!checkPersistentFirst).TryGetValue(key, out icon))
+            return CacheGetOrAddIcon(path, checkPersistentFirst, onIconLoaded, synchronousLoading, FactoryIconFolderSTA);
+
+            BitmapSource FactoryIconFolderSTA(string keyExtension)
             {
-                cacheHit = false;
-
-                if (synchronousLoading)
-                {
-                    cacheHit = true;
-                    icon = DictIconCache(checkPersistentFirst).GetOrAdd(key, FactoryIconFolderSTA);
-                    onIconLoaded(icon);
-                }
-                else
-                {
-                    Thread thread = new (UpdateIconInBackgroundSTA);
-                    thread.SetApartmentState(ApartmentState.STA);
-                    thread.Start();
-                    void UpdateIconInBackgroundSTA()
-                    {
-                        BitmapSource icon = DictIconCache(checkPersistentFirst).GetOrAdd(key, FactoryIconFolderSTA);
-                        onIconLoaded(icon);
-                    }
-                }
-
-                BitmapSource FactoryIconFolderSTA(string keyExtension)
-                {
-                    return GetIconAsBitmapSourceSTA(path, path, linkOverlay, true);
-                }
+                return GetIconAsBitmapSourceSTA(path, path, linkOverlay, true);
             }
-            else
-            {
-                cacheHit = true;
-                onIconLoaded(icon);
-            }
-
-            return cacheHit;
         }
 
         internal static Icon? GetRootFolderIcon(string path)
@@ -140,6 +92,39 @@ namespace SystemTrayMenu.Utilities
             uint attribute = NativeMethods.FileAttributeDirectory;
             IntPtr imageList = NativeMethods.Shell32SHGetFileInfo(path, attribute, ref shFileInfo, (uint)Marshal.SizeOf(shFileInfo), flags);
             return TryGetIcon(path, linkOverlay, shFileInfo, imageList);
+        }
+
+        private static bool CacheGetOrAddIcon(
+            string key,
+            bool checkPersistentFirst,
+            Action<BitmapSource?> onIconLoaded,
+            bool synchronousLoading,
+            Func<string, BitmapSource> factory)
+        {
+            if (!DictIconCache(checkPersistentFirst).TryGetValue(key, out BitmapSource? icon) &&
+                !DictIconCache(!checkPersistentFirst).TryGetValue(key, out icon))
+            {
+                if (synchronousLoading)
+                {
+                    icon = DictIconCache(checkPersistentFirst).GetOrAdd(key, factory);
+                }
+                else
+                {
+                    Thread thread = new(UpdateIconInBackgroundSTA);
+                    thread.SetApartmentState(ApartmentState.STA);
+                    thread.Start();
+                    void UpdateIconInBackgroundSTA()
+                    {
+                        BitmapSource icon = DictIconCache(checkPersistentFirst).GetOrAdd(key, factory);
+                        onIconLoaded(icon);
+                    }
+
+                    return false;
+                }
+            }
+
+            onIconLoaded(icon);
+            return true;
         }
 
         private static BitmapSource? TryCreateBitmapSourceFromIcon(string path, Icon icon) => Application.Current.Dispatcher.Invoke(() =>
