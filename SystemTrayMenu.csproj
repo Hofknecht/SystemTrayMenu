@@ -1,11 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Global project settings -->
   <PropertyGroup>
-    <TargetFramework>net7.0-windows10.0.22000.0</TargetFramework>
+    <!-- https://learn.microsoft.com/en-us/dotnet/standard/frameworks -->
+    <!--<TargetFrameworks>net7.0-windows10.0.22000.0;net7.0</TargetFrameworks>-->
+    <TargetFrameworks>net7.0-windows10.0.22000.0</TargetFrameworks>
+    <!-- https://docs.microsoft.com/en-us/dotnet/core/rid-catalog -->
+    <RuntimeIdentifier Condition=" '$(TargetFramework)' == 'net7.0-windows10.0.22000.0' ">win-x64</RuntimeIdentifier>
+    <RuntimeIdentifier Condition=" '$(TargetFramework)' == 'net7.0' ">linux-x64</RuntimeIdentifier>
+    <UseWPF Condition=" '$(RuntimeIdentifier)' == 'win-x64' ">True</UseWPF>
+    <Nullable>enable</Nullable>
     <SelfContained>true</SelfContained>
-    <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
-    <UseWPF>True</UseWPF>
     <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+    <Platforms>x64;x86;AnyCPU</Platforms>
+    <Configurations>Debug;Release;ReleasePackage</Configurations>
     <OutputType>WinExe</OutputType>
+    <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -20,103 +29,42 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <Nullable>enable</Nullable>
-    <Platforms>x64;x86;AnyCPU</Platforms>
-    <Configurations>Debug;Release;ReleasePackage</Configurations>
-  </PropertyGroup>
-  <PropertyGroup>
+    <PreBuildEvent>taskkill /f /fi "pid gt 0" /im SystemTrayMenu.exe &gt;nul
+EXIT 0</PreBuildEvent>
+    <RepositoryUrl>https://github.com/Hofknecht/SystemTrayMenu</RepositoryUrl>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageProjectUrl>hofknecht.eu/systemtraymenu/</PackageProjectUrl>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <RepositoryType></RepositoryType>
+    <PackageTags>SystemTrayMenu</PackageTags>
+    <SupportedOSPlatformVersion>10.0.22000.0</SupportedOSPlatformVersion>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+    <EnableNETAnalyzers>True</EnableNETAnalyzers>
     <StartupObject>SystemTrayMenu.Program</StartupObject>
-  </PropertyGroup>
-  <PropertyGroup>
+    <ApplicationManifest>Resources\app.manifest</ApplicationManifest>
     <ApplicationIcon>Resources\SystemTrayMenu.ico</ApplicationIcon>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <OutputPath>bin\x64\Debug\</OutputPath>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <NoWarn>1701;1702;WFAC010;MSB3061</NoWarn>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>bin\AnyCPU\Debug\</OutputPath>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <NoWarn>1701;1702;WFAC010;MSB3061</NoWarn>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
-    <OutputPath>bin\x86\Debug\</OutputPath>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <NoWarn>1701;1702;WFAC010;MSB3061</NoWarn>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <OutputPath>bin\x64\Release\</OutputPath>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <OutputPath>bin\AnyCPU\Release\</OutputPath>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleasePackage|x64'">
-    <OutputPath>bin\x64\Release\</OutputPath>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleasePackage|AnyCPU'">
-    <OutputPath>bin\AnyCPU\Release\</OutputPath>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
-    <OutputPath>bin\x86\Release\</OutputPath>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleasePackage|x86'">
-    <OutputPath>bin\x86\Release\</OutputPath>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+  <!-- Release settings -->
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ErrorReport>none</ErrorReport>
     <DebugSymbols>true</DebugSymbols>
     <Optimize>True</Optimize>
-    <NoWarn>1701;1702;WFAC010;MSB3061</NoWarn>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <ErrorReport>none</ErrorReport>
-    <DebugSymbols>true</DebugSymbols>
-    <Optimize>True</Optimize>
-    <NoWarn>1701;1702;WFAC010;MSB3061</NoWarn>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleasePackage|x64'">
-    <ErrorReport>none</ErrorReport>
-    <DebugSymbols>true</DebugSymbols>
-    <Optimize>True</Optimize>
-    <NoWarn>1701;1702;WFAC010;MSB3061</NoWarn>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleasePackage|AnyCPU'">
-    <ErrorReport>none</ErrorReport>
-    <DebugSymbols>true</DebugSymbols>
-    <Optimize>True</Optimize>
-    <NoWarn>1701;1702;WFAC010;MSB3061</NoWarn>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'">
-    <ErrorReport>none</ErrorReport>
-    <DebugSymbols>true</DebugSymbols>
-    <Optimize>True</Optimize>
-    <NoWarn>1701;1702;WFAC010;MSB3061</NoWarn>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleasePackage|x86'">
-    <ErrorReport>none</ErrorReport>
-    <DebugSymbols>true</DebugSymbols>
-    <Optimize>True</Optimize>
-    <NoWarn>1701;1702;WFAC010;MSB3061</NoWarn>
-  </PropertyGroup>
+  <!-- Files -->
   <ItemGroup>
-    <EmbeddedResource Remove="UserInterface\Menu.resx" />
-    <ApplicationDefinition Include="Business\App.xaml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Clearcove.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>ThirdParty\Clearcove.Logging.dll</HintPath>
-    </Reference>
     <AdditionalFiles Include=".stylecop.json" />
-  </ItemGroup>
-  <ItemGroup>
+    <ApplicationDefinition Include="Business\App.xaml" />
+    <EmbeddedResource Remove="UserInterface\Menu.resx" />
+    <Resource Include="Resources\SystemTrayMenu.ico" />
+    <Resource Include="Resources\SystemTrayMenu.png" />
+    <Resource Include="Resources\LinkArrow.ico" />
+    <Resource Include="Resources\Loading.ico" />
+    <Resource Include="Resources\HowToOpenSettings.png" />
+    <Resource Include="Resources\NotFound.ico" />
+    <Folder Include="Packaging\AppPackages\" />
     <Compile Update="Properties\Settings.Designer.cs">
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <AutoGen>True</AutoGen>
@@ -126,16 +74,39 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+    <None Update="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\SystemTrayMenu.ico" />
-    <Resource Include="Resources\SystemTrayMenu.png" />
-    <Resource Include="Resources\LinkArrow.ico" />
-    <Resource Include="Resources\Loading.ico" />
-    <Resource Include="Resources\HowToOpenSettings.png" />
-    <Resource Include="Resources\NotFound.ico" />
+  <!-- References NuGet -->
+  <ItemGroup Condition=" '$(RuntimeIdentifier)' == 'win-x64' ">
+    <FrameworkReference Update="Microsoft.WindowsDesktop.App;Microsoft.WindowsDesktop.App.WPF" TargetingPackVersion="7.0.0" />
+    <PackageReference Include="H.NotifyIcon" Version="2.0.118" />
+    <PackageReference Include="HidSharp" Version="2.1.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="8.0.0-preview1.23165.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="PixiEditor.ColorPicker" Version="3.4.1" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.507">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <Reference Include="Clearcove.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ThirdParty\Clearcove.Logging.dll</HintPath>
+    </Reference>
   </ItemGroup>
-  <ItemGroup>
+  <!-- References Native -->
+  <ItemGroup Condition=" '$(RuntimeIdentifier)' == 'win-x64' ">
     <COMReference Include="IWshRuntimeLibrary">
       <Guid>{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}</Guid>
       <VersionMajor>1</VersionMajor>
@@ -155,77 +126,4 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="H.NotifyIcon" Version="2.0.118" />
-    <PackageReference Include="HidSharp" Version="2.1.0" />
-    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="8.0.0-preview1.23165.1">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="PixiEditor.ColorPicker" Version="3.4.1" />
-    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.507">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Packaging\AppPackages\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Update="Package.appxmanifest">
-      <SubType>Designer</SubType>
-    </None>
-    <None Update="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <None Update="README.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
-  <PropertyGroup>
-    <PreBuildEvent>taskkill /f /fi "pid gt 0" /im SystemTrayMenu.exe &gt;nul
-EXIT 0</PreBuildEvent>
-    <RepositoryUrl>https://github.com/Hofknecht/SystemTrayMenu</RepositoryUrl>
-    <PackageIcon>icon.png</PackageIcon>
-    <PackageProjectUrl>hofknecht.eu/systemtraymenu/</PackageProjectUrl>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <RepositoryType></RepositoryType>
-    <PackageTags>SystemTrayMenu</PackageTags>
-    <SupportedOSPlatformVersion>10.0.22000.0</SupportedOSPlatformVersion>
-    <ApplicationManifest>Resources\app.manifest</ApplicationManifest>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
-    <EnableNETAnalyzers>True</EnableNETAnalyzers>
-  </PropertyGroup>
-  <ItemGroup>
-    <FrameworkReference Update="Microsoft.WindowsDesktop.App;Microsoft.WindowsDesktop.App.WPF" TargetingPackVersion="7.0.0" />
-  </ItemGroup>
-
-<!-- it seems only obj clean and then opening visual studio helps -->
-<!-- NOT TESTED: Microsoft.NET.Sdk.WindowsDesktop -->
-<!-- Workaround: Clear C:\Users\Peter K\AppData\Local\Microsoft\VisualStudio\14.0\ComponentModelCache (and bin and obj) -->
-<!-- Workaround for XAML compiler issue  https://github.com/dotnet/wpf/issues/4299 
-  <UsingTask TaskName="Sleep" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
-    <ParameterGroup>
-      <Delay ParameterType="System.Int32" Required="true" />
-    </ParameterGroup>
-    <Task>
-      <Code Type="Fragment" Language="cs">
-        <![CDATA[
-System.Threading.Thread.Sleep(this.Delay);
-]]>
-      </Code>
-    </Task>
-  </UsingTask>
-
-  <Target Name="WaitForFiles" BeforeTargets="CoreCompile">
-    <PropertyGroup>
-      <WaitTime>5000</WaitTime>
-    </PropertyGroup>
-    <Message Text="Waiting for $(WaitTime)ms" Importance="high" />
-    <Sleep Delay="$(WaitTime)"/>
-  </Target>
-  -->
 </Project>
