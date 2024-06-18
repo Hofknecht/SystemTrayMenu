@@ -130,10 +130,10 @@
     <value>Verlaat de app</value>
   </data>
   <data name="Directory" xml:space="preserve">
-    <value>Gids</value>
+    <value>Map</value>
   </data>
   <data name="Directory empty" xml:space="preserve">
-    <value>Directory leeg</value>
+    <value>Map leeg</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Details</value>
@@ -142,7 +142,7 @@
     <value>Systeeminformatie</value>
   </data>
   <data name="Directory inaccessible" xml:space="preserve">
-    <value>Directory ontoegankelijk</value>
+    <value>Map ontoegankelijk</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Taal</value>
@@ -166,7 +166,7 @@
     <value>Sneltoets</value>
   </data>
   <data name="Start with Windows" xml:space="preserve">
-    <value>Begin met ramen</value>
+    <value>Start met Windows</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Instellingen</value>
@@ -190,10 +190,10 @@
     <value>Enkele klik om een ​​element te openen</value>
   </data>
   <data name="Color scheme dark always active" xml:space="preserve">
-    <value>Kleurenschema donker altijd actief</value>
+    <value>Donker kleurenschema altijd actief</value>
   </data>
   <data name="Expanded" xml:space="preserve">
-    <value>uitgebreid</value>
+    <value>Uitgebreid</value>
   </data>
   <data name="At mouse location" xml:space="preserve">
     <value>Op muislocatie</value>
@@ -244,10 +244,10 @@
     <value>Zoekveld</value>
   </data>
   <data name="Selected element" xml:space="preserve">
-    <value>Geselecteerd element</value>
+    <value>Geselecteerde element</value>
   </data>
   <data name="Border of selected element" xml:space="preserve">
-    <value>Rand van geselecteerd element</value>
+    <value>Rand van geselecteerde element</value>
   </data>
   <data name="Relative directory" xml:space="preserve">
     <value>Relatieve map</value>
@@ -259,7 +259,7 @@
     <value>Configuratie- en logbestanden</value>
   </data>
   <data name="Open application directory" xml:space="preserve">
-    <value>Applicatiemap openen</value>
+    <value>Toepassingsmap openen</value>
   </data>
   <data name="Maximum menu height" xml:space="preserve">
     <value>Maximale menuhoogte</value>
@@ -280,10 +280,10 @@
     <value>Achtergrond van de pijl terwijl de muis eroverheen zweeft</value>
   </data>
   <data name="Color scheme dark" xml:space="preserve">
-    <value>Kleurstelling donker</value>
+    <value>Donker kleurenschema</value>
   </data>
   <data name="Color scheme bright" xml:space="preserve">
-    <value>Kleurenschema helder</value>
+    <value>Helder kleurenschema</value>
   </data>
   <data name="App menu" xml:space="preserve">
     <value>App-menu</value>
@@ -304,13 +304,13 @@
     <value>Schuifregelaar terwijl de muis erover zweeft 2</value>
   </data>
   <data name="Use icon from directory" xml:space="preserve">
-    <value>Gebruik pictogram uit map</value>
+    <value>Gebruik pictogram van de map</value>
   </data>
   <data name="Sizes in percent" xml:space="preserve">
     <value>Maten in procenten</value>
   </data>
   <data name="Border of menu" xml:space="preserve">
-    <value>Rand van menukaart</value>
+    <value>Rand van het menu</value>
   </data>
   <data name="Icons" xml:space="preserve">
     <value>Pictogrammen</value>
@@ -331,13 +331,13 @@
     <value>Het item waarnaar deze snelkoppeling verwijst, is gewijzigd of verplaatst, dus deze snelkoppeling werkt niet meer correct.</value>
   </data>
   <data name="Open directory" xml:space="preserve">
-    <value>Adresboek openen</value>
+    <value>Map openen</value>
   </data>
   <data name="Task Manager" xml:space="preserve">
     <value>Taakbeheer</value>
   </data>
   <data name="Deactivated" xml:space="preserve">
-    <value>gedeactiveerd</value>
+    <value>Gedeactiveerd</value>
   </data>
   <data name="Activated" xml:space="preserve">
     <value>Geactiveerd</value>
@@ -361,10 +361,10 @@
     <value>Voeg de inhoud van de map toe aan de hoofdmap</value>
   </data>
   <data name="Directory paths" xml:space="preserve">
-    <value>Directory paden</value>
+    <value>Mappaden</value>
   </data>
   <data name="Directories" xml:space="preserve">
-    <value>Directories</value>
+    <value>Mappen</value>
   </data>
   <data name="Recursive" xml:space="preserve">
     <value>Recursief</value>
@@ -394,7 +394,7 @@
     <value>Linksonder</value>
   </data>
   <data name="Bottom right" xml:space="preserve">
-    <value>Rechts onder</value>
+    <value>Rechtsonder</value>
   </data>
   <data name="Main menu appears" xml:space="preserve">
     <value>Het hoofdmenu verschijnt</value>
@@ -478,7 +478,7 @@
     <value>Kopieer rij-element via slepen en neerzetten</value>
   </data>
   <data name="Drag" xml:space="preserve">
-    <value>Sleuren</value>
+    <value>Slepen</value>
   </data>
   <data name="Scroll via swipe" xml:space="preserve">
     <value>Blader door te vegen</value>
@@ -556,7 +556,7 @@
     <value>Om uit te knippen</value>
   </data>
   <data name="To paste" xml:space="preserve">
-    <value>Plakken</value>
+    <value>Om te plakken</value>
   </data>
   <data name="Selecting All" xml:space="preserve">
     <value>Alles selecteren</value>
