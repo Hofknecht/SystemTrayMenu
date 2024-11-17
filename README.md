@@ -88,6 +88,7 @@ Reviews
 [de.moyens.net](https://de.moyens.net/windows/systemtraymenu-ist-eine-kostenlose-startmenue-alternative-fuer-windows-11-10/) |
 [windowsreport.com](https://windowsreport.com/windows-11-free-start-menu-replacement/) |
 [onmsft.com](https://www.onmsft.com/how-to/how-to-edit-windows-11-start-menu-layout) |
+[Gamestar](https://www.gamestar.de/artikel/app-windows-11-taskleiste-verbessern,3417432.html) |
 [starchart.cc](https://starchart.cc/hofknecht/systemtraymenu.svg)
 
 FAQ
