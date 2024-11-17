@@ -88,6 +88,7 @@ Reviews
 [de.moyens.net](https://de.moyens.net/windows/systemtraymenu-ist-eine-kostenlose-startmenue-alternative-fuer-windows-11-10/) |
 [windowsreport.com](https://windowsreport.com/windows-11-free-start-menu-replacement/) |
 [onmsft.com](https://www.onmsft.com/how-to/how-to-edit-windows-11-start-menu-layout) |
+[Gamestar](https://www.gamestar.de/artikel/app-windows-11-taskleiste-verbessern,3417432.html) |
 [starchart.cc](https://starchart.cc/hofknecht/systemtraymenu.svg)
 
 FAQ
@@ -300,38 +301,12 @@ Donations
 * Give a star, follow, watch, fork [![stars](https://img.shields.io/github/stars/hofknecht/systemtraymenu?style=social)](https://github.com/Hofknecht/SystemTrayMenu/stargazers) [![followers](https://img.shields.io/github/followers/hofknecht?style=social)](https://github.com/Hofknecht?tab=followers) [![watchers](https://img.shields.io/github/watchers/hofknecht/systemtraymenu?style=social)](https://github.com/Hofknecht/SystemTrayMenu/watchers) [![forks](https://img.shields.io/github/forks/hofknecht/systemtraymenu?style=social)](https://github.com/Hofknecht/SystemTrayMenu/network/members)
 * Help us to improve SystemTrayMenu via [Feedback](https://github.com/Hofknecht/SystemTrayMenu/edit/master/README.md#what-can-i-do-if-i-have-a-problem-idea-or-question) or [Show and tell](https://github.com/Hofknecht/SystemTrayMenu/discussions/categories/show-and-tell) how you use it
 * Don't hesitate to donate via PayPal if you appreciate SystemTrayMenu and would like to support our work:  
-[![PayPal](https://www.paypalobjects.com/webstatic/de_DE/i/de-pp-logo-200px.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Y9W6H5HXQPPUQ&source=url)
+[![PayPal](https://www.paypalobjects.com/webstatic/de_DE/i/de-pp-logo-200px.png)](https://paypal.me/SystemTrayMenu)
 * Become a &nbsp;[![Downloads Releases](https://img.shields.io/badge/-GitHub%20Sponsor-fafbfc?logo=GitHub%20Sponsors)](https://github.com/sponsors/Hofknecht)
 * Like, rate, share, comment, watch, tweet, join SystemTrayMenu (see also list in the top of readme)  
 [![Twitter](https://img.shields.io/twitter/follow/markushofknecht?style=social)](https://twitter.com/MarkusHofknecht)
 [![Reddit](https://img.shields.io/reddit/subreddit-subscribers/systemtraymenu?style=social)](https://www.reddit.com/r/SystemTrayMenu/)
 [![Facebook](https://img.shields.io/badge/Like-blue&logo=facebook?&labelColor=white&logo=facebook&color=white)](https://www.facebook.com/Systemtraymenu-114069060335483)  
-<!--* We are trying to apply for the amazon affiliate program with an amazon link, in the future we might get ~1.5% per purchase, for you the price stays the same. All you have to do is doing your purchases via the link. As an Amazon partner, we earn from qualified sales. This only works with certain products and we can e.g. create these category links (please tell us if you need other special categories):  
-Popular offers: --> 
-<!--a target="_blank" href="https://www.amazon.de/deal/0c0ca0e6?_encoding=UTF8&linkCode=r02&tag=systemtraymen-21&linkId=2563e96525666067f86f307dc0dbb3ce&ref_=ihub_rc_td_c_deals-promotions_0c0ca0e6">External and internal hard drives & SSDs</a-->  
-<!--a target="_blank" href="https://www.amazon.de/deal/00e8adff?_encoding=UTF8&linkCode=r02&tag=systemtraymen-21&linkId=3f230f3b20a20179d13865a261eebcbb&ref_=ihub_rc_td_c_deals-promotions_00e8adff">USB sticks Micro SD cards & RAM memory</a-->  
-<!--a target="_blank" href="https://www.amazon.de/deal/6e1b3fdd?_encoding=UTF8&linkCode=r02&tag=systemtraymen-21&linkId=a564059235d38cc1f7cacb21a9b55d4d&ref_=ihub_rc_td_c_deals-promotions_6e1b3fdd">Gaming Mice Keyboards Headsets and Accessories</a-->  
-<!--a target="_blank" href="https://www.amazon.de/deal/6be9721b?_encoding=UTF8&linkCode=r02&tag=systemtraymen-21&linkId=4f277b38dfc3bb1bd7f03ede8ccc2fdc&ref_=ihub_rc_td_c_deals-promotions_6be9721b">Top sellers for your home</a-->  
-<!--a target="_blank" href="https://www.amazon.de/deal/92352ca0?_encoding=UTF8&linkCode=r02&tag=systemtraymen-21&linkId=42616447ce672851de0e49131fde37a7&ref_=ihub_rc_td_c_deals-promotions_92352ca0">ASUS gaming motherboard socket</a-->  
-<!--a target="_blank" href="https://www.amazon.de/deal/28f2bc0f?showVariations=true&_encoding=UTF8&linkCode=r02&tag=systemtraymen-21&linkId=ad1215bb0830e568b5c7d859b2c90d37&ref_=ihub_rc_td_c_deals-promotions_28f2bc0f">Gaming monitors from different manufacturers</a-->  
-<!--a target="_blank" href="https://www.amazon.de/deal/634e16ae?_encoding=UTF8&linkCode=r02&tag=systemtraymen-21&linkId=044709e2c9f34d3949aad05c5dad578d&ref_=ihub_rc_td_c_deals-promotions_634e16ae">Headphones from Sony Denon and much more</a-->  
-<!--a target="_blank" href="https://www.amazon.de/deal/2a2abb33?_encoding=UTF8&linkCode=r02&tag=systemtraymen-21&linkId=b25df70dec6da6986aa18eb1d3baa6cd&ref_=ihub_rc_td_c_deals-promotions_2a2abb33">Bluetooth Headphones & Speakers by Soundcore</a-->  
-<!--a target="_blank" href="https://www.amazon.de/deal/5e70f674?_encoding=UTF8&linkCode=r02&tag=systemtraymen-21&linkId=612481a6d72e08029a0091e9fcc07f82&ref_=ihub_rc_td_c_deals-promotions_5e70f674">Lighting</a-->  
-<!--a target="_blank" href="https://www.amazon.de/deal/8b218d21?_encoding=UTF8&linkCode=r02&tag=systemtraymen-21&linkId=8d433699b562dd9c7e6873194811bb4e&ref_=ihub_rc_td_c_deals-promotions_8b218d21">Gaming Laptops</a-->  
-<!--a target="_blank" href="https://www.amazon.de/deal/e45ea2b7?_encoding=UTF8&linkCode=r02&tag=systemtraymen-21&linkId=788ad1176bd69dc2e6980317ff4e2b67&ref_=ihub_rc_td_c_deals-promotions_e45ea2b7">Headphones from Bose Sennheiser Philips Audio and much more</a-->  
-<!--a target="_blank" href="https://www.amazon.de/deal/e4af7b7a?_encoding=UTF8&linkCode=r02&tag=systemtraymen-21&linkId=4c808d1c3bcbb720b52bdd3d0622fa74&ref_=ihub_rc_td_c_deals-promotions_e4af7b7a">Coffee machines and accessories</a-->  
-<!--a target="_blank" href="https://www.amazon.de/deal/4666dc4a?_encoding=UTF8&linkCode=r02&tag=systemtraymen-21&linkId=588b33399f734e20c04d82ff41ba45e3&ref_=ihub_rc_td_c_deals-promotions_4666dc4a">Computer accessories</a-->  
-<!--a target="_blank" href="https://www.amazon.de/deal/d7117d73?_encoding=UTF8&linkCode=r02&tag=systemtraymen-21&linkId=62aff0fd7572235fde50c13413f8fd28&ref_=ihub_rc_td_c_deals-promotions_d7117d73">HyperX Gaming</a-->  
-<!--a target="_blank" href="https://www.amazon.de/deal/9644446b?_encoding=UTF8&linkCode=r02&tag=systemtraymen-21&linkId=8dd2b17705164603a6b55a3f8e461c2e&ref_=ihub_rc_td_c_deals-promotions_9644446b">Netatmo smart home products</a-->  
-<!--a target="_blank" href="https://www.amazon.de/deal/e693926e?_encoding=UTF8&linkCode=r02&tag=systemtraymen-21&linkId=e27d8ac861d8f33041872ff21fdff02c&ref_=ihub_rc_td_c_deals-promotions_e693926e">Smartphones Smartwatches and accessories</a-->  
-<!--a target="_blank" href="https://www.amazon.de/deal/f9a5261d?_encoding=UTF8&linkCode=r02&tag=systemtraymen-21&linkId=8a12373dc9b5ceaa67a1a2a2e1dfc606&ref_=ihub_rc_td_c_deals-promotions_f9a5261d">Audio cable</a-->  
-<!--a target="_blank" href="https://www.amazon.de/deal/8b13c2f5?_encoding=UTF8&linkCode=r02&tag=systemtraymen-21&linkId=1302ff8212f930791293b411851a6bdc&ref_=ihub_rc_td_c_deals-promotions_8b13c2f5">WLAN and mesh systems, switches and surveillance cameras</a-->  
-<!--a target="_blank" href="https://www.amazon.de/deal/fc813eed?_encoding=UTF8&linkCode=r02&tag=systemtraymen-21&linkId=ff134e03141d366eac0518528d1c999e&ref_=ihub_rc_td_c_deals-promotions_fc813eed">Smarthome and Home Security</a-->  
-<!--a target="_blank" href="https://www.amazon.de/deal/0f10758d?_encoding=UTF8&linkCode=r02&tag=systemtraymen-21&linkId=3325789289a03d743fe5b46981c82edc&ref_=ihub_rc_td_c_deals-promotions_0f10758d">Soundbars & speakers from Denon Polk Philips Audio and much more</a-->  
-<!--a target="_blank" href="https://www.amazon.de/dp/B07ZNGT8K4?_encoding=UTF8&linkCode=r02&tag=systemtraymen-21&linkId=764abbfc6ac54f3a5abd298af0105b28&ref_=ihub_rc_td_c_deals-promotions_b77be80b">Monitor mount</a-->  
-<!--a target="_blank" href="https://www.amazon.de/dp/B00L2442H0?_encoding=UTF8&linkCode=r02&tag=systemtraymen-21&linkId=1c3e9143da0adfd2c667d6451ebaca6b&ref_=ihub_rc_td_c_deals-promotions_8333037a">PCs & accessories</a-->  
-
-<!--a target="_blank" href="https://www.amazon.de/b?_encoding=UTF8&tag=systemtraymen-21&linkCode=ur2&linkId=6151ac8258f44adda610cc05e57967a2&camp=1638&creative=6742&node=340843031">Computers &amp; Accessories</a>, <a target="_blank" href="https://www.amazon.de/b?_encoding=UTF8&tag=systemtraymen-21&linkCode=ur2&linkId=ca8480de9bc1ef726d5a1280f593ac9f&camp=1638&creative=6742&node=562066">Electronics &amp; Photography</a>, <a target="_blank" href="https://www.amazon.de/b?_encoding=UTF8&tag=systemtraymen-21&linkCode=ur2&linkId=7ff79addfbdbfcaae04818d279a7e973&camp=1638&creative=6742&node=301927">Software</a>, <a target="_blank" href="https://www.amazon.de/b?_encoding=UTF8&tag=systemtraymen-21&linkCode=ur2&linkId=100c22e7db187d7cce9ae20f8a4e024a&camp=1638&creative=6742&node=300992">Video Games</a-->  
 
 PayPal/GitHub Sponsors - Thank you!
 ------------------
@@ -352,3 +327,5 @@ PayPal/GitHub Sponsors - Thank you!
 * Jens B.
 * [spitzlbergerj](https://github.com/spitzlbergerj)
 * Udo N.
+* [carmabl](https://github.com/carmabl)
+* [DiSchGue](https://github.com/DiSchGue)
