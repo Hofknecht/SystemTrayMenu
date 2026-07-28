@@ -10,6 +10,7 @@ namespace SystemTrayMenu.Helpers
     using System.Data;
     using System.Diagnostics;
     using System.IO;
+    using System.IO.Enumeration;
     using System.Linq;
     using SystemTrayMenu.DataClasses;
     using SystemTrayMenu.Utilities;
@@ -201,6 +202,11 @@ namespace SystemTrayMenu.Helpers
                     return;
                 }
 
+                if (IsHiddenEntry(directory))
+                {
+                    continue;
+                }
+
                 menuData.RowDatas.Add(new RowData(true, false, menuData.Level, directory));
             }
 
@@ -209,6 +215,11 @@ namespace SystemTrayMenu.Helpers
                 if (worker?.CancellationPending == true)
                 {
                     return;
+                }
+
+                if (IsHiddenEntry(file))
+                {
+                    continue;
                 }
 
                 menuData.RowDatas.Add(new RowData(false, false, menuData.Level, file));
@@ -225,11 +236,19 @@ namespace SystemTrayMenu.Helpers
             {
                 foreach (string file in GetFilesBySearchPattern(path, Config.SearchPattern))
                 {
-                    menuData.RowDatas.Add(new RowData(false, true, menuData.Level, file));
+                    if (!IsHiddenEntry(file))
+                    {
+                        menuData.RowDatas.Add(new RowData(false, true, menuData.Level, file));
+                    }
                 }
 
                 foreach (string directory in Directory.GetDirectories(path))
                 {
+                    if (IsHiddenEntry(directory))
+                    {
+                        continue;
+                    }
+
                     if (!onlyFiles)
                     {
                         menuData.RowDatas.Add(new RowData(true, true, menuData.Level, directory));
@@ -245,6 +264,29 @@ namespace SystemTrayMenu.Helpers
             {
                 Log.Warn($"GetDirectoriesAndFilesRecursive path:'{path}'", ex);
             }
+        }
+
+
+        private static bool IsHiddenEntry(string path)
+        {
+            string entryName = Path.GetFileName(path);
+            string[] hiddenEntryPatterns = Config.HiddenEntriesPattern.Split('|');
+
+            foreach (string hiddenEntryPattern in hiddenEntryPatterns)
+            {
+                string pattern = hiddenEntryPattern.Trim();
+                if (string.IsNullOrEmpty(pattern))
+                {
+                    continue;
+                }
+
+                if (FileSystemName.MatchesSimpleExpression(pattern, entryName, ignoreCase: true))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         private static List<string> GetFilesBySearchPattern(string path, string searchPatternCombined)
