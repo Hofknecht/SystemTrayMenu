@@ -14,11 +14,11 @@ SystemTrayMenu&nbsp;<img src="https://raw.githubusercontent.com/Hofknecht/System
 
 > [!TIP]
 > **SystemTrayMenu 3 is here:** rewritten from scratch for Windows, macOS and Linux, with live updates. It opens in 5 ms, needs about 20 MB of memory and takes over your settings from version 1 at first start.
-> Try it free for 14 days, then €2.99 once: no subscription, one license for all your computers. https://hofknecht.eu/systemtraymenu/en.html
+> Try it free for 14 days, then €2.99 once: no subscription, one license for all your computers. https://hofknecht.eu/systemtraymenu/en.html?ref=v1-readme
 >
 > Version 1 here on GitHub stays free and keeps working.
 > Bought version 1 in the Microsoft Store? You'll get version 3 there as an update at no extra cost.
-> Deutsch: SystemTrayMenu 3 ist da, Infos und Download: https://hofknecht.eu/systemtraymenu/
+> Deutsch: SystemTrayMenu 3 ist da, Infos und Download: https://hofknecht.eu/systemtraymenu/?ref=v1-readme
 
 SystemTrayMenu is an open source 'Desktop Toolbar' or 'Start Menu' alternative. It offers a clear, personalized menu which can be controlled via keyboard, mouse or touchscreen. Files, links and folders are organized in several levels as dropdown menus. Various options like appearance, hotkey, autostart and behavior can be adjusted.
 
@@ -104,7 +104,7 @@ FAQ
 
 **What about SystemTrayMenu 3?**
 
-Version 3 is the new SystemTrayMenu, rewritten from scratch: for Windows, macOS and Linux, faster, with less memory and with live updates (it installs new versions by itself and checks their signature; can be switched off). At first start it offers to take over your settings from version 1. Try it free for 14 days, then €2.99 once, one license for all your computers: https://hofknecht.eu/systemtraymenu/en.html  
+Version 3 is the new SystemTrayMenu, rewritten from scratch: for Windows, macOS and Linux, faster, with less memory and with live updates (it installs new versions by itself and checks their signature; can be switched off). At first start it offers to take over your settings from version 1. Try it free for 14 days, then €2.99 once, one license for all your computers: https://hofknecht.eu/systemtraymenu/en.html?ref=v1-readme  
 Version 1 stays free and keeps working; development continues in version 3. Version 2 (branch v2.x) was never released, version 3 replaces it.  
 Bought version 1 in the Microsoft Store? You'll get version 3 there as an update at no extra cost.  
 Switching: quit version 1 and turn off its autostart, so that Ctrl+Win opens only one menu.
