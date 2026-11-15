@@ -1,17 +1,3 @@
-
-<!-- [![Gitter](https://badges.gitter.im/SystemTrayMenu/community.svg)](https://gitter.im/SystemTrayMenu/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) -->
-<!--
-[![Windows 11 neues Startmenü hinzufügen! - SystemTrayMenu _ PathTM - YouTube](https://user-images.githubusercontent.com/52528841/145684486-44e98d8f-c2ba-42fa-837d-91a6a397549a.png)](https://www.youtube.com/watch?v=xsi4Uv3-ZLg)
--->
-
-[![Release](https://img.shields.io/github/v/release/hofknecht/systemtraymenu?label=Download%20release%20(click%20here))](https://github.com/Hofknecht/SystemTrayMenu/releases) 
-[![Tweet](https://img.shields.io/badge/Tweet-blue&logo=twitter?&labelColor=white&logo=twitter&color=white)](https://twitter.com/intent/tweet?text=SystemTrayMenu%20is%20an%20open-source%20%27Desktop%20Toolbar%27%20or%20%27Start%20Menu%27%20alternative.%20It%20offers%20a%20clear%2C%20personalized%20menu%20which%20can%20be%20opened%20via%20keyboard%20or%20mouse.%20Files%2C%20links%20and%20folders%20are%20organized%20in%20several%20levels%20as%20drop-down%20menus.%0A%0Ahttps%3A%2F%2Fgithub.com%2FHofknecht%2FSystemTrayMenu%23systemtraymenu%0A%0A)
-[![Facebook](https://img.shields.io/badge/Share-blue&logo=facebook?&labelColor=white&logo=facebook&color=white)](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgithub.com%2FHofknecht%2FSystemTrayMenu%23systemtraymenu%0A%0ASystemTrayMenu)
-
-SystemTrayMenu&nbsp;<img src="https://raw.githubusercontent.com/Hofknecht/SystemTrayMenu/master/Resources/SystemTrayMenu.ico" alt="Trulli" width="32" height="32" align="left">
-------------------
-**Browse and open your files easily**
-
 > [!TIP]
 > **SystemTrayMenu 3 is here:** rewritten from scratch for Windows, macOS and Linux, with live updates. It opens in 5 ms, needs about 20 MB of memory and takes over your settings from version 1 at first start.
 > Try it free for 14 days, then €2.99 once: no subscription, one license for all your computers. https://hofknecht.eu/systemtraymenu/en.html?ref=v1-readme
@@ -19,6 +5,20 @@ SystemTrayMenu&nbsp;<img src="https://raw.githubusercontent.com/Hofknecht/System
 > Version 1 here on GitHub stays free and keeps working.
 > Bought version 1 in the Microsoft Store? You'll get version 3 there as an update at no extra cost.
 > Deutsch: SystemTrayMenu 3 ist da, Infos und Download: https://hofknecht.eu/systemtraymenu/?ref=v1-readme
+
+
+<!-- [![Gitter](https://badges.gitter.im/SystemTrayMenu/community.svg)](https://gitter.im/SystemTrayMenu/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) -->
+<!--
+[![Windows 11 neues Startmenü hinzufügen! - SystemTrayMenu _ PathTM - YouTube](https://user-images.githubusercontent.com/52528841/145684486-44e98d8f-c2ba-42fa-837d-91a6a397549a.png)](https://www.youtube.com/watch?v=xsi4Uv3-ZLg)
+-->
+
+[![Download SystemTrayMenu 3](https://img.shields.io/badge/Download-SystemTrayMenu%203%20for%20Windows%2C%20macOS%2C%20Linux-2ea44f?style=for-the-badge)](https://hofknecht.eu/systemtraymenu/en.html?ref=v1-readme) 
+[![Tweet](https://img.shields.io/badge/Tweet-blue&logo=twitter?&labelColor=white&logo=twitter&color=white)](https://twitter.com/intent/tweet?text=SystemTrayMenu%20is%20an%20open-source%20%27Desktop%20Toolbar%27%20or%20%27Start%20Menu%27%20alternative.%20It%20offers%20a%20clear%2C%20personalized%20menu%20which%20can%20be%20opened%20via%20keyboard%20or%20mouse.%20Files%2C%20links%20and%20folders%20are%20organized%20in%20several%20levels%20as%20drop-down%20menus.%0A%0Ahttps%3A%2F%2Fgithub.com%2FHofknecht%2FSystemTrayMenu%23systemtraymenu%0A%0A)
+[![Facebook](https://img.shields.io/badge/Share-blue&logo=facebook?&labelColor=white&logo=facebook&color=white)](https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgithub.com%2FHofknecht%2FSystemTrayMenu%23systemtraymenu%0A%0ASystemTrayMenu)
+
+SystemTrayMenu&nbsp;<img src="https://raw.githubusercontent.com/Hofknecht/SystemTrayMenu/master/Resources/SystemTrayMenu.ico" alt="Trulli" width="32" height="32" align="left">
+------------------
+**Browse and open your files easily**
 
 SystemTrayMenu is an open source 'Desktop Toolbar' or 'Start Menu' alternative. It offers a clear, personalized menu which can be controlled via keyboard, mouse or touchscreen. Files, links and folders are organized in several levels as dropdown menus. Various options like appearance, hotkey, autostart and behavior can be adjusted.
 
@@ -54,6 +54,11 @@ Keyboard shortcuts
 Sources
 ------------------
 
+[![Download SystemTrayMenu 3](https://img.shields.io/badge/Download-SystemTrayMenu%203%20for%20Windows%2C%20macOS%2C%20Linux-2ea44f?style=for-the-badge)](https://hofknecht.eu/systemtraymenu/en.html?ref=v1-readme)
+
+<details>
+<summary><sub>Version 1 (Windows only, free, no longer developed)</sub></summary>
+
 [![GitHub all releases](https://img.shields.io/github/downloads/Hofknecht/SystemTrayMenu/total?label=GitHub)](https://github.com/Hofknecht/SystemTrayMenu/releases)
 [![Downloads SourceForge](https://img.shields.io/sourceforge/dt/systemtraymenu.svg?label=Sourceforge)](https://sourceforge.net/projects/systemtraymenu/)&nbsp;
 [![Downloads Chocolatey](https://img.shields.io/chocolatey/dt/SystemTrayMenu?label=Chocolatey)](https://community.chocolatey.org/packages/systemtraymenu)  
@@ -77,6 +82,8 @@ Sources
 [![baominh](https://user-images.githubusercontent.com/52528841/120082388-0c277400-c0c3-11eb-97c8-ee35e692b38d.png)](https://baominh.tech/systemtraymenu-tao-menu-start-tuy-chinh-duoi-khai-he-thong.html)
 [![softodrom](https://user-images.githubusercontent.com/52528841/142266835-80248737-60d6-4e80-9ce3-e9b68bb217c0.png)](https://soft.softodrom.ru/%D0%A1%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C/28225)
 [![lo4d](https://github.com/Hofknecht/SystemTrayMenu/assets/52528841/3ba7d63a-5882-42e6-9cc7-0a7fa167f2c6)](https://systemtraymenu.en.lo4d.com/windows)&nbsp;
+
+</details>
 
 Reviews
 ------------------
