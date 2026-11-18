@@ -169,7 +169,7 @@ namespace SystemTrayMenu.UserInterface
                     {
                         if (Clipboard.ContainsText(TextDataFormat.Text))
                         {
-                            textBoxSearch.SelectedText = Clipboard.GetData(DataFormats.Text).ToString();
+                            textBoxSearch.SelectedText = Clipboard.GetData(DataFormats.Text)?.ToString() ?? string.Empty;
                         }
                     }),
             });

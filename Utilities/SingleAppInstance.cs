@@ -14,12 +14,19 @@ namespace SystemTrayMenu.Utilities
         private const string IpcServiceName = nameof(SingleAppInstance);
         private const string IpcWakeupCmd = "wakeup";
         private const string IpcWakeupResponseOK = "OK";
+        private const string DebugAllowMultiInstanceEnvironmentVariable = "STM_DEBUG_ALLOW_MULTI_INSTANCE";
         private static IpcPipe? ipcPipe;
 
         internal static event Action? Wakeup;
 
         internal static bool Initialize()
         {
+            if (ShouldSkipSingleInstance())
+            {
+                Log.Info("Skip single instance check for debug session");
+                return true;
+            }
+
             bool success = true;
 
             try
@@ -91,6 +98,14 @@ namespace SystemTrayMenu.Utilities
         internal static void Unload()
         {
             ipcPipe?.Dispose();
+        }
+
+        private static bool ShouldSkipSingleInstance()
+        {
+            string? environmentValue = Environment.GetEnvironmentVariable(DebugAllowMultiInstanceEnvironmentVariable);
+            return Debugger.IsAttached ||
+                string.Equals(environmentValue, "1", StringComparison.OrdinalIgnoreCase) ||
+                string.Equals(environmentValue, "true", StringComparison.OrdinalIgnoreCase);
         }
     }
 }

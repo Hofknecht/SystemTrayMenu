@@ -1,0 +1,8 @@
+2026/03/24 15:41:48.470 2  INFO Skip single instance check for debug session
+2026/03/24 15:41:48.706 2  INFO Application Start SystemTrayMenu.dll | 2.0.0.0 | ScalingFactor=1
+2026/03/24 16:05:45.295 2  INFO Skip single instance check for debug session
+2026/03/24 16:05:45.474 2  INFO Application Start SystemTrayMenu.dll | 2.0.0.0 | ScalingFactor=1
+2026/03/24 16:06:20.464 2  INFO Restart by 'ByConfigChange'
+2026/03/24 16:06:20.949 2  INFO Skip single instance check for debug session
+2026/03/24 16:06:21.057 2  INFO Application Start SystemTrayMenu.dll | 2.0.0.0 | ScalingFactor=1
+2026/03/24 16:07:09.375 2  INFO Hotkey registration cannot unregister key Control, Windows with modifiers Control, Windows

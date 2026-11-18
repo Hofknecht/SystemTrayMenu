@@ -8,29 +8,52 @@ namespace SystemTrayMenu.Utilities
     using System.IO;
     using System.Reflection;
     using System.Runtime.InteropServices;
-    using Shell32;
 
     internal static class FolderOptions
     {
         private static bool hideHiddenEntries;
         private static bool hideSystemEntries;
-        private static IShellDispatch4? iShellDispatch4;
 
         internal static void Initialize()
         {
             try
             {
-                iShellDispatch4 = (IShellDispatch4?)Activator.CreateInstance(
-                    Type.GetTypeFromProgID("Shell.Application")!);
+                Type? shellType = Type.GetTypeFromProgID("Shell.Application");
+                if (shellType == null)
+                {
+                    Log.Info("Get Shell COM type failed");
+                    return;
+                }
+
+                object shell = Activator.CreateInstance(shellType)!;
 
                 // Using SHGetSetSettings would be much better in performance but the results are not accurate.
                 // We have to go for the shell interface in order to receive the correct settings:
                 // https://docs.microsoft.com/en-us/windows/win32/shell/ishelldispatch4-getsetting
                 const int SSF_SHOWALLOBJECTS = 0x00000001;
-                hideHiddenEntries = !(iShellDispatch4?.GetSetting(SSF_SHOWALLOBJECTS) ?? false);
+                object? showAllObjectsObject = shellType.InvokeMember(
+                    "GetSetting",
+                    BindingFlags.InvokeMethod,
+                    binder: null,
+                    target: shell,
+                    args: new object[] { SSF_SHOWALLOBJECTS });
+                bool showAllObjects = showAllObjectsObject is bool currentShowAllObjects && currentShowAllObjects;
+                hideHiddenEntries = !showAllObjects;
 
                 const int SSF_SHOWSUPERHIDDEN = 0x00040000;
-                hideSystemEntries = !(iShellDispatch4?.GetSetting(SSF_SHOWSUPERHIDDEN) ?? false);
+                object? showSuperHiddenObject = shellType.InvokeMember(
+                    "GetSetting",
+                    BindingFlags.InvokeMethod,
+                    binder: null,
+                    target: shell,
+                    args: new object[] { SSF_SHOWSUPERHIDDEN });
+                bool showSuperHidden = showSuperHiddenObject is bool currentShowSuperHidden && currentShowSuperHidden;
+                hideSystemEntries = !showSuperHidden;
+
+                if (Marshal.IsComObject(shell))
+                {
+                    _ = Marshal.FinalReleaseComObject(shell);
+                }
             }
             catch (Exception ex)
             {

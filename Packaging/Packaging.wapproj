@@ -52,24 +52,26 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <AppxPackageSigningEnabled>false</AppxPackageSigningEnabled>
     <EntryPointProjectUniqueName>..\SystemTrayMenu.csproj</EntryPointProjectUniqueName>
-    <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
     <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
     <AppInstallerUri>https://github.com/Hofknecht/SystemTrayMenu/releases</AppInstallerUri>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
     <AppxBundle>Always</AppxBundle>
+    <NoWarn>$(NoWarn);NU1701</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Platform)' == 'AnyCPU'">
+    <PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\SystemTrayMenu.csproj">
-      <!-- https://github.com/dotnet/msbuild/issues/3356 TODO: Check how to solve multi targets -->
-      <!-- <SetTargetFramework>TargetFramework=net7.0-windows10.0.22000.0</SetTargetFramework> -->
-      <!-- <SkipGetTargetFrameworkProperties>False</SkipGetTargetFrameworkProperties> -->
+      <SetPlatform>Platform=x64</SetPlatform>
+      <SetTargetFramework>TargetFramework=net10.0-windows10.0.22000.0</SetTargetFramework>
+      <SkipGetTargetFrameworkProperties>true</SkipGetTargetFrameworkProperties>
     </ProjectReference>
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <Folder Include="Properties\" />
     <Content Include="Images\BadgeLogo.scale-100.png" />
     <Content Include="Images\BadgeLogo.scale-125.png" />
     <Content Include="Images\BadgeLogo.scale-150.png" />
@@ -125,7 +127,6 @@
     <Content Include="Images\Wide310x150Logo.scale-150.png" />
     <Content Include="Images\Wide310x150Logo.scale-200.png" />
     <Content Include="Images\Wide310x150Logo.scale-400.png" />
-    <None Include="Package.StoreAssociation.xml" />
   </ItemGroup>
   <Import Project="$(WapProjPath)\Microsoft.DesktopBridge.targets" />
 </Project>

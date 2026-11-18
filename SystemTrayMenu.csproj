@@ -2,12 +2,10 @@
   <!-- Global project settings -->
   <PropertyGroup>
     <!-- https://learn.microsoft.com/en-us/dotnet/standard/frameworks -->
-    <!--<TargetFrameworks>net7.0-windows10.0.22000.0;net7.0</TargetFrameworks>-->
-    <TargetFrameworks>net7.0-windows10.0.22000.0</TargetFrameworks>
+    <TargetFramework>net10.0-windows10.0.22000.0</TargetFramework>
     <!-- https://docs.microsoft.com/en-us/dotnet/core/rid-catalog -->
-    <RuntimeIdentifier Condition=" '$(TargetFramework)' == 'net7.0-windows10.0.22000.0' ">win-x64</RuntimeIdentifier>
-    <RuntimeIdentifier Condition=" '$(TargetFramework)' == 'net7.0' ">linux-x64</RuntimeIdentifier>
-    <UseWPF Condition=" '$(RuntimeIdentifier)' == 'win-x64' ">True</UseWPF>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <UseWPF>true</UseWPF>
     <Nullable>enable</Nullable>
     <SelfContained>true</SelfContained>
     <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
@@ -26,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <ApplicationVersion>3.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <PreBuildEvent>taskkill /f /fi "pid gt 0" /im SystemTrayMenu.exe &gt;nul
@@ -35,7 +33,6 @@ EXIT 0</PreBuildEvent>
     <PackageIcon>icon.png</PackageIcon>
     <PackageProjectUrl>hofknecht.eu/systemtraymenu/</PackageProjectUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <RepositoryType></RepositoryType>
     <PackageTags>SystemTrayMenu</PackageTags>
     <SupportedOSPlatformVersion>10.0.22000.0</SupportedOSPlatformVersion>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -87,15 +84,10 @@ EXIT 0</PreBuildEvent>
     </None>
   </ItemGroup>
   <!-- References NuGet -->
-  <ItemGroup Condition=" '$(RuntimeIdentifier)' == 'win-x64' ">
-    <FrameworkReference Update="Microsoft.WindowsDesktop.App;Microsoft.WindowsDesktop.App.WPF" TargetingPackVersion="7.0.0" />
-    <PackageReference Include="H.NotifyIcon" Version="2.0.118" />
-    <PackageReference Include="HidSharp" Version="2.1.0" />
-    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="8.0.0-preview1.23165.1">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="PixiEditor.ColorPicker" Version="3.4.1" />
+  <ItemGroup>
+    <PackageReference Include="H.NotifyIcon" Version="2.4.1" />
+    <PackageReference Include="HidSharp" Version="2.6.4" />
+    <PackageReference Include="PixiEditor.ColorPicker" Version="3.4.2.2" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.507">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -106,24 +98,4 @@ EXIT 0</PreBuildEvent>
     </Reference>
   </ItemGroup>
   <!-- References Native -->
-  <ItemGroup Condition=" '$(RuntimeIdentifier)' == 'win-x64' ">
-    <COMReference Include="IWshRuntimeLibrary">
-      <Guid>{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="Shell32">
-      <Guid>{50A7E9B0-70EF-11D1-B75A-00A0C90564FE}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
-  </ItemGroup>
 </Project>
