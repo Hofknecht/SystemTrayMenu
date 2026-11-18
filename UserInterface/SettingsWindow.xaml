@@ -255,6 +255,9 @@
                         <GroupBox Header="{u:Translate 'Filter menu by file type e.g.: *.exe|*.dll'}">
                             <TextBox x:Name="textBoxSearchPattern" Margin="2" TextWrapping="NoWrap" />
                         </GroupBox>
+                        <GroupBox Header="{u:Translate 'Hidden entries e.g.: desktop.ini|Thumbs.db|*.bak'}">
+                            <TextBox x:Name="textBoxHiddenEntriesPattern" Margin="2" TextWrapping="NoWrap" />
+                        </GroupBox>
                         <Button Content="{u:Translate 'Default'}" Click="ButtonExpertDefault_Click" HorizontalAlignment="Left"/>
                     </StackPanel>
                 </ScrollViewer>

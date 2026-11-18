@@ -29,6 +29,8 @@ namespace SystemTrayMenu
 
         public static string SearchPattern => Settings.Default.SearchPattern;
 
+        public static string HiddenEntriesPattern => Settings.Default.HiddenEntriesPattern;
+
         public static bool ShowDirectoryTitleAtTop => Settings.Default.ShowDirectoryTitleAtTop;
 
         public static bool ShowSearchBar => Settings.Default.ShowSearchBar;

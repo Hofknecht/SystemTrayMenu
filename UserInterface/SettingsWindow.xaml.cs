@@ -286,6 +286,7 @@ namespace SystemTrayMenu.UserInterface
             numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value = Settings.Default.ClearCacheIfMoreThanThisNumberOfItems;
 
             textBoxSearchPattern.Text = Settings.Default.SearchPattern;
+            textBoxHiddenEntriesPattern.Text = Settings.Default.HiddenEntriesPattern;
 
             checkBoxUseIconFromRootFolder.IsChecked = Settings.Default.UseIconFromRootFolder;
             checkBoxRoundCorners.IsChecked = Settings.Default.RoundCorners;
@@ -587,6 +588,7 @@ namespace SystemTrayMenu.UserInterface
             Settings.Default.TimeUntilClosesAfterEnterPressed = numericUpDownTimeUntilClosesAfterEnterPressed.Value;
             Settings.Default.ClearCacheIfMoreThanThisNumberOfItems = numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value;
             Settings.Default.SearchPattern = textBoxSearchPattern.Text;
+            Settings.Default.HiddenEntriesPattern = textBoxHiddenEntriesPattern.Text;
 
             Settings.Default.UseIconFromRootFolder = checkBoxUseIconFromRootFolder.IsChecked ?? false;
             Settings.Default.RoundCorners = checkBoxRoundCorners.IsChecked ?? false;
@@ -875,6 +877,7 @@ namespace SystemTrayMenu.UserInterface
             numericUpDownTimeUntilClosesAfterEnterPressed.Value = 200;
             numericUpDownClearCacheIfMoreThanThisNumberOfItems.Value = 200;
             textBoxSearchPattern.Text = string.Empty;
+            textBoxHiddenEntriesPattern.Text = string.Empty;
         }
 
         private void TextBoxColorsChanged(ColorSelector sender)
