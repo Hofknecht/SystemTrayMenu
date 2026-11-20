@@ -4,7 +4,12 @@
 >
 > Version 1 here on GitHub stays free and keeps working.
 > Bought version 1 in the Microsoft Store? You'll get version 3 there as an update at no extra cost.
+>
 > Deutsch: SystemTrayMenu 3 ist da, Infos und Download: https://hofknecht.eu/systemtraymenu/?ref=v1-readme
+>
+> 中文：SystemTrayMenu 3 已发布，全新打造，界面为简体中文。介绍和下载：https://hofknecht.eu/systemtraymenu/zh.html?ref=v1-readme
+>
+> [Français](https://hofknecht.eu/systemtraymenu/fr.html?ref=v1-readme) · [Español](https://hofknecht.eu/systemtraymenu/es.html?ref=v1-readme) · [Italiano](https://hofknecht.eu/systemtraymenu/it.html?ref=v1-readme) · [Nederlands](https://hofknecht.eu/systemtraymenu/nl.html?ref=v1-readme) · [Polski](https://hofknecht.eu/systemtraymenu/pl.html?ref=v1-readme)
 
 
 <!-- [![Gitter](https://badges.gitter.im/SystemTrayMenu/community.svg)](https://gitter.im/SystemTrayMenu/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) -->
