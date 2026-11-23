@@ -1,0 +1,106 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "stm: stop running instances",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "$processes = @(Get-Process -Name SystemTrayMenu -ErrorAction SilentlyContinue); foreach ($process in $processes) { Stop-Process -Id $process.Id -Force }; exit 0"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "stm: restore",
+      "type": "shell",
+      "command": "dotnet",
+      "args": [
+        "restore",
+        "${workspaceFolder}/SystemTrayMenu.csproj"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "stm: build Debug",
+      "type": "shell",
+      "command": "dotnet",
+      "args": [
+        "build",
+        "${workspaceFolder}/SystemTrayMenu.csproj",
+        "-c",
+        "Debug"
+      ],
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "stm: stop running instances",
+        "stm: restore"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "stm: watch run (Hot Reload)",
+      "type": "shell",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "$env:STM_DEBUG_ALLOW_MULTI_INSTANCE='1'; dotnet watch --project \"${workspaceFolder}/SystemTrayMenu.csproj\" run -c Debug"
+      ],
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "stm: stop running instances",
+        "stm: restore"
+      ],
+      "isBackground": true,
+      "group": "none",
+      "problemMatcher": [
+        {
+          "owner": "dotnet-watch",
+          "fileLocation": "absolute",
+          "pattern": [
+            {
+              "regexp": "^(.*)\\((\\d+),(\\d+)\\):\\s*(error|warning)\\s*([A-Z]+\\d+):\\s*(.*)$",
+              "file": 1,
+              "line": 2,
+              "column": 3,
+              "severity": 4,
+              "code": 5,
+              "message": 6
+            }
+          ],
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": ".*dotnet watch.*",
+            "endsPattern": ".*(Hot reload enabled|Watching for file changes).*"
+          }
+        }
+      ]
+    },
+    {
+      "label": "stm: watch test",
+      "type": "shell",
+      "command": "dotnet",
+      "args": [
+        "watch",
+        "--project",
+        "${workspaceFolder}/SystemTrayMenu.csproj",
+        "test",
+        "-c",
+        "Debug"
+      ],
+      "isBackground": true,
+      "group": "test",
+      "problemMatcher": "$msCompile"
+    }
+  ]
+}

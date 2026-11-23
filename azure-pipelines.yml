@@ -20,7 +20,7 @@ steps:
 - task: UseDotNet@2
   inputs:
     packageType: sdk
-    version: 6.0.x
+    version: 10.0.x
 
 - task: DotNetCoreCLI@2
   inputs:
@@ -40,7 +40,7 @@ steps:
 - task: ArchiveFiles@2
   displayName: 'Archive $(Build.ArtifactStagingDirectory)'
   inputs:
-    rootFolderOrFile: '$(Build.SourcesDirectory)\bin\AnyCPU\Release\net6.0-windows10.0.22000.0\publish\win-x64\'
+    rootFolderOrFile: '$(Build.SourcesDirectory)\bin\AnyCPU\Release\net10.0-windows10.0.22000.0\publish\win-x64\'
     includeRootFolder: false
     archiveFile: '$(Build.ArtifactStagingDirectory)/SystemTrayMenu-$(AssemblyInfo.AssemblyVersion).zip'
 

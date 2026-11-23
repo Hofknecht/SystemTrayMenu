@@ -1,0 +1,15 @@
+{
+  "dotnet.defaultSolution": "SystemTrayMenu.slnx",
+  "debug.internalConsoleOptions": "neverOpen",
+  "omnisharp.enableRoslynAnalyzers": true,
+  "omnisharp.enableEditorConfigSupport": true,
+  "csharp.suppressBuildAssetsNotification": true,
+  "files.exclude": {
+    "**/bin": true,
+    "**/obj": true
+  },
+  "search.exclude": {
+    "**/bin": true,
+    "**/obj": true
+  }
+}

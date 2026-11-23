@@ -7,7 +7,6 @@ namespace SystemTrayMenu.Helpers
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
-    using System.Data;
     using System.Diagnostics;
     using System.IO;
     using System.Linq;
@@ -19,6 +18,7 @@ namespace SystemTrayMenu.Helpers
         internal static void DiscoverItems(BackgroundWorker? worker, string path, ref MenuData menuData)
         {
             bool isNetworkRoot = false;
+            Dictionary<string, bool> directoryContentCache = new(StringComparer.InvariantCultureIgnoreCase);
             try
             {
                 isNetworkRoot = FileLnk.IsNetworkRoot(path);
@@ -28,7 +28,7 @@ namespace SystemTrayMenu.Helpers
                 }
                 else
                 {
-                    DiscoverLocalDirectories(worker, path, ref menuData);
+                    DiscoverLocalDirectories(worker, path, ref menuData, directoryContentCache);
                 }
             }
             catch (Exception ex)
@@ -50,7 +50,7 @@ namespace SystemTrayMenu.Helpers
             {
                 foreach (var additionalPath in GetAddionalPathsForMainMenu())
                 {
-                    GetDirectoriesAndFilesRecursive(ref menuData, additionalPath.Path, additionalPath.OnlyFiles, additionalPath.Recursive);
+                    GetDirectoriesAndFilesRecursive(ref menuData, additionalPath.Path, additionalPath.OnlyFiles, additionalPath.Recursive, directoryContentCache);
                 }
             }
 
@@ -185,7 +185,11 @@ namespace SystemTrayMenu.Helpers
             }
         }
 
-        private static void DiscoverLocalDirectories(BackgroundWorker? worker, string path, ref MenuData menuData)
+        private static void DiscoverLocalDirectories(
+            BackgroundWorker? worker,
+            string path,
+            ref MenuData menuData,
+            Dictionary<string, bool> directoryContentCache)
         {
             if (!Directory.Exists(path))
             {
@@ -199,6 +203,11 @@ namespace SystemTrayMenu.Helpers
                 if (worker?.CancellationPending == true)
                 {
                     return;
+                }
+
+                if (!ShouldDisplayDirectory(directory, directoryContentCache))
+                {
+                    continue;
                 }
 
                 menuData.RowDatas.Add(new RowData(true, false, menuData.Level, directory));
@@ -219,7 +228,8 @@ namespace SystemTrayMenu.Helpers
             ref MenuData menuData,
             string path,
             bool onlyFiles,
-            bool recursiv)
+            bool recursiv,
+            Dictionary<string, bool> directoryContentCache)
         {
             try
             {
@@ -230,6 +240,11 @@ namespace SystemTrayMenu.Helpers
 
                 foreach (string directory in Directory.GetDirectories(path))
                 {
+                    if (!ShouldDisplayDirectory(directory, directoryContentCache))
+                    {
+                        continue;
+                    }
+
                     if (!onlyFiles)
                     {
                         menuData.RowDatas.Add(new RowData(true, true, menuData.Level, directory));
@@ -237,7 +252,7 @@ namespace SystemTrayMenu.Helpers
 
                     if (recursiv)
                     {
-                        GetDirectoriesAndFilesRecursive(ref menuData, directory, onlyFiles, recursiv);
+                        GetDirectoriesAndFilesRecursive(ref menuData, directory, onlyFiles, recursiv, directoryContentCache);
                     }
                 }
             }
@@ -245,6 +260,61 @@ namespace SystemTrayMenu.Helpers
             {
                 Log.Warn($"GetDirectoriesAndFilesRecursive path:'{path}'", ex);
             }
+        }
+
+        private static bool ShouldDisplayDirectory(string directoryPath, Dictionary<string, bool> directoryContentCache)
+        {
+            if (directoryContentCache.TryGetValue(directoryPath, out bool shouldDisplayDirectory))
+            {
+                return shouldDisplayDirectory;
+            }
+
+            shouldDisplayDirectory = HasDisplayableChildItems(directoryPath, directoryContentCache);
+            directoryContentCache[directoryPath] = shouldDisplayDirectory;
+            return shouldDisplayDirectory;
+        }
+
+        private static bool HasDisplayableChildItems(string directoryPath, Dictionary<string, bool> directoryContentCache)
+        {
+            if (IsEntryHidden(directoryPath))
+            {
+                directoryContentCache[directoryPath] = false;
+                return false;
+            }
+
+            try
+            {
+                foreach (string file in GetFilesBySearchPattern(directoryPath, Config.SearchPattern))
+                {
+                    if (!IsEntryHidden(file))
+                    {
+                        directoryContentCache[directoryPath] = true;
+                        return true;
+                    }
+                }
+
+                foreach (string childDirectory in Directory.GetDirectories(directoryPath))
+                {
+                    if (ShouldDisplayDirectory(childDirectory, directoryContentCache))
+                    {
+                        directoryContentCache[directoryPath] = true;
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Warn($"HasDisplayableChildItems path:'{directoryPath}'", ex);
+            }
+
+            directoryContentCache[directoryPath] = false;
+            return false;
+        }
+
+        private static bool IsEntryHidden(string path)
+        {
+            FolderOptions.ReadHiddenAttributes(path, out _, out bool isDirectoryToHide);
+            return isDirectoryToHide;
         }
 
         private static List<string> GetFilesBySearchPattern(string path, string searchPatternCombined)

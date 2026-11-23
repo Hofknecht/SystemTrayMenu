@@ -1,0 +1,35 @@
+name: Dotnet Build
+
+on:
+  push:
+    branches:
+      - '**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    env:
+      BUILD_CONFIGURATION: Release
+      SDK_VERSION: 10.0.201
+    steps:
+    - name: Checkout repository
+      shell: pwsh
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git init
+        git remote add origin "https://x-access-token:${env:GITHUB_TOKEN}@github.com/${env:GITHUB_REPOSITORY}.git"
+        git fetch --depth=1 origin "${env:GITHUB_SHA}"
+        git checkout --force FETCH_HEAD
+    - name: Install .NET SDK
+      shell: pwsh
+      run: |
+        $installScript = Join-Path $env:RUNNER_TEMP "dotnet-install.ps1"
+        Invoke-WebRequest "https://dot.net/v1/dotnet-install.ps1" -OutFile $installScript
+        & $installScript -Version "${env:SDK_VERSION}" -InstallDir "$env:RUNNER_TEMP\dotnet"
+        Add-Content -Path $env:GITHUB_PATH -Value "$env:RUNNER_TEMP\dotnet"
+    - name: Restore
+      run: dotnet restore SystemTrayMenu.csproj
+    - name: Build
+      run: dotnet build SystemTrayMenu.csproj -c ${{ env.BUILD_CONFIGURATION }} --no-restore

@@ -141,7 +141,7 @@ namespace SystemTrayMenu.Business
 
                 // Receive message
                 byte[] inBuffer = new byte[len];
-                ioStream.Read(inBuffer, 0, len);
+                ioStream.ReadExactly(inBuffer, 0, len);
 
                 return streamEncoding.GetString(inBuffer);
             }

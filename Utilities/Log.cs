@@ -10,10 +10,10 @@ namespace SystemTrayMenu.Utilities
     using System.Diagnostics;
     using System.IO;
     using System.Reflection;
+    using System.Runtime.InteropServices;
     using System.Threading;
     using System.Windows;
     using Clearcove.Logging;
-    using IWshRuntimeLibrary;
     using File = System.IO.File;
 
     internal static class Log
@@ -169,16 +169,50 @@ namespace SystemTrayMenu.Utilities
                         .Equals(".lnk", StringComparison.InvariantCultureIgnoreCase);
                     if (isLink)
                     {
-                        WshShell shell = new();
-                        IWshShortcut shortcut = (IWshShortcut)shell.CreateShortcut(fileName);
-                        bool startAsAdmin = shortcut.WindowStyle == 3;
-                        if (startAsAdmin)
+                        Type? shellType = Type.GetTypeFromProgID("WScript.Shell");
+                        if (shellType != null)
                         {
-                            verb = "runas";
+                            object shell = Activator.CreateInstance(shellType)!;
+                            object? shortcut = shellType.InvokeMember(
+                                "CreateShortcut",
+                                BindingFlags.InvokeMethod,
+                                binder: null,
+                                target: shell,
+                                args: new object[] { fileName });
+                            if (shortcut == null)
+                            {
+                                Log.Info($"CreateShortcut returned null for path:'{fileName}'");
+                                goto StartProcess;
+                            }
+
+                            Type shortcutType = shortcut.GetType();
+                            object? windowStyleObject = shortcutType.InvokeMember(
+                                "WindowStyle",
+                                BindingFlags.GetProperty,
+                                binder: null,
+                                target: shortcut,
+                                args: null);
+                            int windowStyle = windowStyleObject is int style ? style : 0;
+                            bool startAsAdmin = windowStyle == 3;
+                            if (startAsAdmin)
+                            {
+                                verb = "runas";
+                            }
+
+                            if (Marshal.IsComObject(shortcut))
+                            {
+                                _ = Marshal.FinalReleaseComObject(shortcut);
+                            }
+
+                            if (Marshal.IsComObject(shell))
+                            {
+                                _ = Marshal.FinalReleaseComObject(shell);
+                            }
                         }
                     }
                 }
 
+                StartProcess:
                 using Process p = new()
                 {
                     StartInfo = new ProcessStartInfo(fileName)

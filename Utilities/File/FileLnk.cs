@@ -6,8 +6,9 @@ namespace SystemTrayMenu.Utilities
 {
     using System;
     using System.IO;
+    using System.Reflection;
+    using System.Runtime.InteropServices;
     using System.Threading;
-    using Shell32;
 
     internal class FileLnk
     {
@@ -56,38 +57,53 @@ namespace SystemTrayMenu.Utilities
             isFolder = false;
             try
             {
-                string? pathOnly = Path.GetDirectoryName((string)shortcutFilename);
-                string? filenameOnly = Path.GetFileName((string)shortcutFilename);
-
-                Shell shell = new();
-                Folder folder = shell.NameSpace(pathOnly);
-                if (folder == null)
+                string shortcutPath = (string)shortcutFilename;
+                Type? shellType = Type.GetTypeFromProgID("WScript.Shell");
+                if (shellType == null)
                 {
-                    Log.Info($"{nameof(GetShortcutFileNamePath)} folder == null for path:'{shortcutFilename}'");
+                    Log.Info($"{nameof(GetShortcutFileNamePath)} WScript.Shell COM type not found for path:'{shortcutFilename}'");
                     return resolvedFilename;
                 }
 
-                FolderItem folderItem = folder.ParseName(filenameOnly);
-                if (folderItem == null)
+                object shell = Activator.CreateInstance(shellType)!;
+                object? shortcut = shellType.InvokeMember(
+                    "CreateShortcut",
+                    BindingFlags.InvokeMethod,
+                    binder: null,
+                    target: shell,
+                    args: new object[] { shortcutPath });
+                if (shortcut == null)
                 {
-                    Log.Info($"{nameof(GetShortcutFileNamePath)} folderItem == null for path:'{shortcutFilename}'");
+                    Log.Info($"{nameof(GetShortcutFileNamePath)} CreateShortcut returned null for path:'{shortcutFilename}'");
                     return resolvedFilename;
                 }
 
-                ShellLinkObject link = (ShellLinkObject)folderItem.GetLink;
-                isFolder = link.Target.IsFolder;
-                if (string.IsNullOrEmpty(link.Path))
+                Type shortcutType = shortcut.GetType();
+                object? targetPathObject = shortcutType.InvokeMember(
+                    "TargetPath",
+                    BindingFlags.GetProperty,
+                    binder: null,
+                    target: shortcut,
+                    args: null);
+                string targetPath = targetPathObject as string ?? string.Empty;
+                if (!string.IsNullOrEmpty(targetPath))
                 {
-                    // https://github.com/Hofknecht/SystemTrayMenu/issues/242
-                    // do not set CLSID key (GUID) shortcuts as resolvedFilename
-                    if (!link.Target.Path.Contains("::{"))
+                    // Keep previous behavior: skip virtual-shell CLSID paths.
+                    if (!targetPath.Contains("::{", StringComparison.InvariantCulture))
                     {
-                        resolvedFilename = link.Target.Path;
+                        resolvedFilename = targetPath;
+                        isFolder = Directory.Exists(targetPath);
                     }
                 }
-                else
+
+                if (Marshal.IsComObject(shortcut))
                 {
-                    resolvedFilename = link.Path;
+                    _ = Marshal.FinalReleaseComObject(shortcut);
+                }
+
+                if (Marshal.IsComObject(shell))
+                {
+                    _ = Marshal.FinalReleaseComObject(shell);
                 }
             }
             catch (UnauthorizedAccessException)

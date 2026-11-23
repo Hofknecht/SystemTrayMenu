@@ -1,0 +1,66 @@
+name: Dotnet Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: windows-latest
+    env:
+      BUILD_CONFIGURATION: Release
+      SDK_VERSION: 10.0.201
+      OUTPUT_DIR: bin\AnyCPU\Release\net10.0-windows10.0.22000.0\win-x64
+    steps:
+    - name: Checkout repository
+      shell: pwsh
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git init
+        git remote add origin "https://x-access-token:${env:GITHUB_TOKEN}@github.com/${env:GITHUB_REPOSITORY}.git"
+        git fetch --depth=1 origin "${env:GITHUB_SHA}"
+        git checkout --force FETCH_HEAD
+    - name: Install .NET SDK
+      shell: pwsh
+      run: |
+        $installScript = Join-Path $env:RUNNER_TEMP "dotnet-install.ps1"
+        Invoke-WebRequest "https://dot.net/v1/dotnet-install.ps1" -OutFile $installScript
+        & $installScript -Version "${env:SDK_VERSION}" -InstallDir "$env:RUNNER_TEMP\dotnet"
+        Add-Content -Path $env:GITHUB_PATH -Value "$env:RUNNER_TEMP\dotnet"
+    - name: Restore
+      run: dotnet restore SystemTrayMenu.csproj
+    - name: Build
+      run: dotnet build SystemTrayMenu.csproj -c ${{ env.BUILD_CONFIGURATION }} --no-restore
+    - name: Create release archive
+      shell: pwsh
+      run: |
+        $archiveName = "SystemTrayMenu-${env:GITHUB_REF_NAME}-win-x64.zip"
+        $archivePath = Join-Path $env:RUNNER_TEMP $archiveName
+        if (Test-Path $archivePath)
+        {
+          Remove-Item $archivePath -Force
+        }
+
+        Compress-Archive -Path "${env:OUTPUT_DIR}\*" -DestinationPath $archivePath
+        Add-Content -Path $env:GITHUB_ENV -Value "RELEASE_ASSET_PATH=$archivePath"
+        Add-Content -Path $env:GITHUB_ENV -Value "RELEASE_ASSET_NAME=$archiveName"
+    - name: Publish GitHub Release
+      shell: pwsh
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        gh release view "${env:GITHUB_REF_NAME}" --repo "${env:GITHUB_REPOSITORY}" *> $null
+        if ($LASTEXITCODE -eq 0)
+        {
+          gh release upload "${env:GITHUB_REF_NAME}" "${env:RELEASE_ASSET_PATH}#${env:RELEASE_ASSET_NAME}" --repo "${env:GITHUB_REPOSITORY}" --clobber
+        }
+        else
+        {
+          gh release create "${env:GITHUB_REF_NAME}" "${env:RELEASE_ASSET_PATH}#${env:RELEASE_ASSET_NAME}" --repo "${env:GITHUB_REPOSITORY}" --generate-notes
+        }

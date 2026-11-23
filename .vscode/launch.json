@@ -1,0 +1,72 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "SystemTrayMenu: Rebuild + Debug",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "stm: build Debug",
+      "program": "${workspaceFolder}/bin/AnyCPU/Debug/net10.0-windows10.0.22000.0/win-x64/SystemTrayMenu.exe",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "STM_DEBUG_ALLOW_MULTI_INSTANCE": "1"
+      },
+      "stopAtEntry": false,
+      "justMyCode": true,
+      "console": "internalConsole",
+      "internalConsoleOptions": "neverOpen",
+      "logging": {
+        "moduleLoad": false,
+        "programOutput": true,
+        "exceptions": true,
+        "diagnosticsLog": {
+          "protocolMessages": false
+        },
+        "browserStdOut": false,
+        "browserStdErr": false
+      }
+    },
+    {
+      "name": "SystemTrayMenu: Build + Debug",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "stm: build Debug",
+      "program": "${workspaceFolder}/bin/AnyCPU/Debug/net10.0-windows10.0.22000.0/win-x64/SystemTrayMenu.exe",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "STM_DEBUG_ALLOW_MULTI_INSTANCE": "1"
+      },
+      "stopAtEntry": false,
+      "justMyCode": true,
+      "console": "internalConsole",
+      "internalConsoleOptions": "neverOpen",
+      "logging": {
+        "moduleLoad": false,
+        "programOutput": true,
+        "exceptions": true,
+        "diagnosticsLog": {
+          "protocolMessages": false
+        },
+        "browserStdOut": false,
+        "browserStdErr": false
+      }
+    },
+    {
+      "name": "SystemTrayMenu: Attach to Process",
+      "type": "coreclr",
+      "request": "attach",
+      "processId": "${command:pickProcess}",
+      "justMyCode": true,
+      "logging": {
+        "moduleLoad": false,
+        "programOutput": true,
+        "exceptions": true,
+        "diagnosticsLog": {
+          "protocolMessages": false
+        },
+        "browserStdOut": false,
+        "browserStdErr": false
+      }
+    }
+  ]
+}
